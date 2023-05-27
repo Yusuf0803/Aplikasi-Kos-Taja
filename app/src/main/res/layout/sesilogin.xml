@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/header1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/panah_sesi"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/panah"></TextView>
+
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Kos Taja"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/header2"
+        android:layout_below="@+id/header1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:layout_marginStart="30dp"
+            android:text="Selamat Datang di Kos Taja"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/header2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_margin="30dp">
+
+                <ImageView
+                    android:id="@+id/gambar_sesi"
+                    android:layout_width="180dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
+                    android:background="@drawable/kostaja_logo">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/ket1_sesi"
+                    android:layout_below="@+id/gambar_sesi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masuk sebagai Pencari Kos"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/user_sesi"
+                    android:layout_below="@+id/ket1_sesi"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:hint="Pencari Kos"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/background_tview">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/ket2_sesi"
+                    android:layout_below="@+id/user_sesi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masuk sebagai Pemilik Kos"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="serif">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/admin_sesi"
+                    android:layout_below="@+id/ket2_sesi"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:hint="Pemilik Kos"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/background_tview">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_below="@+id/admin_sesi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Butuh bantuan?"
+                        android:textSize="10dp"
+                        android:textColor="@color/black">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/about_sesi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Klik di sini"
+                        android:textColor="@color/biru"
+                        android:textSize="10dp"
+                        android:layout_marginLeft="4dp">
+
+                    </TextView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>
