@@ -105,7 +105,6 @@
                         android:id="@+id/ket1_head"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/gambar"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="20dp"
                         android:text="Masuk sebagai Pencari Kos"
@@ -114,14 +113,12 @@
                     </TextView>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/Btn_user"
+                        android:id="@+id/Btn_sesiuser"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:layout_below="@+id/ket1_head"
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_tview"
                         android:hint="Pencari Kos"
-                        android:paddingLeft="10dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black">
@@ -141,14 +138,12 @@
                     </TextView>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/Btn_admin"
+                        android:id="@+id/Btn_sesiadmin"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:layout_below="@+id/ket2_head"
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_tview"
                         android:hint="Pencari Kos"
-                        android:paddingLeft="10dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black"></androidx.appcompat.widget.AppCompatButton>

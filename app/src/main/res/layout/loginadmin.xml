@@ -122,7 +122,7 @@
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_ed"
                         android:hint="Email"
-                        android:paddingLeft="10dp"
+                        android:paddingLeft="20dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black">
@@ -196,7 +196,8 @@
                             android:layout_height="wrap_content"
                             android:text="Belum punya akun Kos Taja?"
                             android:textColor="@color/black"
-                            android:textStyle="normal">
+                            android:textStyle="normal"
+                            android:textSize="10dp">
 
                         </TextView>
 
@@ -207,7 +208,8 @@
                             android:layout_marginLeft="4dp"
                             android:text="Daftar Sekarang"
                             android:textColor="@color/biru"
-                            android:textStyle="normal">
+                            android:textStyle="normal"
+                            android:textSize="10dp">
 
                         </TextView>
 
@@ -226,7 +228,8 @@
                             android:layout_height="wrap_content"
                             android:text="Lupa password?"
                             android:textColor="@color/biru"
-                            android:textStyle="normal">
+                            android:textStyle="normal"
+                            android:textSize="10dp">
 
                         </TextView>
 

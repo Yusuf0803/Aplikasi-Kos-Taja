@@ -121,7 +121,7 @@
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_ed"
                         android:hint="Email"
-                        android:paddingLeft="10dp"
+                        android:paddingLeft="20dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black">
