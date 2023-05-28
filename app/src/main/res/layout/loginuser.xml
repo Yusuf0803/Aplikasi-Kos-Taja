@@ -1,235 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
-    <LinearLayout
-        android:id="@+id/header1"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="start"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/panah_user"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/panah">
-        </TextView>
-
-        <TextView
-            android:id="@+id/judul"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="20dp"
-            android:fontFamily="serif"
-            android:gravity="center"
-            android:text="Kos Taja"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold">
-
-        </TextView>
-
-    </LinearLayout>
+    android:layout_height="match_parent">
 
     <ScrollView
-        android:layout_below="@id/header1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/header2"
-            android:layout_below="@+id/header1"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:textSize="20dp"
-                android:layout_marginStart="20dp"
-                android:text="Login sebagai Pencari Kos"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:fontFamily="serif"
-                android:layout_gravity="center"
-                android:gravity="center">
-
-            </TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="15dp">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/header1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-                    <ImageView
-                        android:id="@+id/gambar"
-                        android:layout_width="160dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/kostaja_logo">
-                    </ImageView>
-
-                </LinearLayout>
+                android:layout_height="40dp"
+                android:gravity="start"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/Email_head"
-                    android:layout_below="@id/gambar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="@color/black"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="20dp">
-
-                </TextView>
-
-                <EditText
-                    android:id="@+id/Email_user"
-                    android:layout_below="@+id/Email_head"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:paddingLeft="10dp"
-                    android:hint="Email"
-                    android:textSize="12dp"
-                    android:layout_marginTop="4dp"
-                    android:textColorHint="@color/black"
-                    app:counterTextColor="@color/black"
-                    android:background="@drawable/background_ed">
-
-                </EditText>
+                    android:id="@+id/panah_user"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@drawable/panah"></TextView>
 
                 <TextView
-                    android:id="@+id/Password_head"
-                    android:layout_below="@id/Email_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Password"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="15dp">
-
-                </TextView>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/Password_head"
-                    app:passwordToggleEnabled="true"
-                    android:id="@+id/Pass0"
-                    app:boxBackgroundMode="none"
-                    app:hintEnabled="false"
-                    android:layout_marginTop="4dp">
-
-                    <EditText
-                        android:id="@+id/Password_user"
-                        android:layout_below="@+id/Password_head"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:padding="10dp"
-                        android:inputType="textPassword"
-                        android:textSize="12dp"
-                        android:hint="Password"
-                        android:textColorHint="@color/black"
-                        android:layout_marginTop="4dp"
-                        app:counterTextColor="@color/black"
-                        android:background="@drawable/background_ed"
-                        android:longClickable="false">
-                    </EditText>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/Btn_Login_user"
-                    android:layout_marginTop="25dp"
-                    android:layout_below="@id/Pass0"
-                    android:layout_width="match_parent"
+                    android:id="@+id/judul"
+                    android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:hint="Login"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Kos Taja"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:textColorHint="@color/black"
-                    android:background="@drawable/button_shape">
+                    android:textStyle="bold">
 
-                </androidx.appcompat.widget.AppCompatButton>
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/header2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header1"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Login sebagai Pencari Kos"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/header2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/ket1"
-                    android:layout_below="@+id/Btn_Login_user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center">
+                    android:layout_gravity="center"
+                    android:layout_margin="30dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/gambar"
+                            android:layout_width="160dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/kostaja_logo"></ImageView>
+
+                    </LinearLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/Email_head"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Belum punya akun Kos Taja?"
-                        android:textStyle="normal"
+                        android:layout_below="@id/gambar"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Email"
                         android:textColor="@color/black">
 
                     </TextView>
 
+                    <EditText
+                        android:id="@+id/Email_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/Email_head"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/background_ed"
+                        android:hint="Email"
+                        android:paddingLeft="10dp"
+                        android:textColorHint="@color/black"
+                        android:textSize="12dp"
+                        app:counterTextColor="@color/black">
+
+                    </EditText>
+
                     <TextView
-                        android:id="@+id/Daftar_user"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/Password_head"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:text="Daftar Sekarang"
-                        android:textColor="@color/biru"
-                        android:textStyle="normal">
+                        android:layout_below="@id/Email_user"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Password"
+                        android:textColor="@color/black">
 
                     </TextView>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_below="@+id/ket1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:id="@+id/Forget_user"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Pass0"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lupa password?"
-                        android:textStyle="normal"
-                        android:textColor="@color/biru">
+                        android:layout_below="@id/Password_head"
+                        android:layout_marginTop="4dp"
+                        app:boxBackgroundMode="none"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true">
 
-                    </TextView>
+                        <EditText
+                            android:id="@+id/Password_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_below="@+id/Password_head"
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/background_ed"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:longClickable="false"
+                            android:padding="10dp"
+                            android:textColorHint="@color/black"
+                            android:textSize="12dp"
+                            app:counterTextColor="@color/black"></EditText>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Btn_Login_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/Pass0"
+                        android:layout_marginTop="25dp"
+                        android:background="@drawable/button_shape"
+                        android:hint="Login"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="20dp">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                    <LinearLayout
+                        android:id="@+id/ket1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Btn_Login_user"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Belum punya akun Kos Taja?"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="10dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/Daftar_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="Daftar Sekarang"
+                            android:textColor="@color/biru"
+                            android:textStyle="normal"
+                            android:textSize="10dp">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ket1"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/Forget_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lupa password?"
+                            android:textColor="@color/biru"
+                            android:textStyle="normal"
+                            android:textSize="10dp">
+
+                        </TextView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </ScrollView>
 
