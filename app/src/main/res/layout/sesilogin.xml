@@ -143,7 +143,7 @@
                         android:layout_height="80dp"
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_tview"
-                        android:hint="Pencari Kos"
+                        android:hint="Pemilik Kos"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black"></androidx.appcompat.widget.AppCompatButton>
