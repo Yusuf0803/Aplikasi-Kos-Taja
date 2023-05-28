@@ -22,7 +22,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/panah_user"
+                    android:id="@+id/panah_sesi"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center_vertical"
@@ -113,7 +113,7 @@
                     </TextView>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/Btn_sesiuser"
+                        android:id="@+id/Btn_Sesi_User"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginTop="4dp"
@@ -138,7 +138,7 @@
                     </TextView>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/Btn_sesiadmin"
+                        android:id="@+id/Btn_Sesi_Admin"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginTop="4dp"
@@ -167,7 +167,7 @@
                         </TextView>
 
                         <TextView
-                            android:id="@+id/klikdisini"
+                            android:id="@+id/about_sesi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
