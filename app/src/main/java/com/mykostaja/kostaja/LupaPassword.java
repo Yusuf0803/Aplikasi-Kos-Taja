@@ -19,7 +19,7 @@ public class LupaPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lupaspassword);
+        setContentView(R.layout.lupapassword);
 
         panah_lupapswd = findViewById(R.id.panah_lupapswd);
         Email_Verifikasi = findViewById(R.id.Email_Verifikasi);
