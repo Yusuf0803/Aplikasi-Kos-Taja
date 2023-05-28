@@ -43,5 +43,11 @@ public class LoginUser extends AppCompatActivity {
             }
         });
 
+        Password_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginUser.this,LupaPassword.class));
+            }
+        });
     }
 }

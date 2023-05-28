@@ -43,5 +43,12 @@ public class LoginAdmin extends AppCompatActivity {
             }
         });
 
+        Password_Admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginAdmin.this,LupaPassword.class));
+            }
+        });
+
     }
 }
