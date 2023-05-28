@@ -43,5 +43,12 @@ public class SesiLogin extends AppCompatActivity {
             }
         });
 
+        panah_sesi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
     }
 }
