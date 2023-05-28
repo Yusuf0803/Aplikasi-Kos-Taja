@@ -108,7 +108,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif-light"
                         android:text="Nama Lengkap"
@@ -134,7 +134,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Nomor Handphone"
                         android:fontFamily="sans-serif-light"
@@ -161,7 +161,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Email"
                         android:fontFamily="sans-serif-light"
@@ -187,7 +187,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Password"
                         android:fontFamily="sans-serif-light"
@@ -225,7 +225,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Ulangi Password"
                         android:fontFamily="sans-serif-light"
