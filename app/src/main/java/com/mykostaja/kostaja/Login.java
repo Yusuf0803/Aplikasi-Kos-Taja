@@ -1,5 +1,7 @@
 package com.mykostaja.kostaja;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class LoginUser extends AppCompatActivity {
-
+public class Login extends AppCompatActivity {
     private EditText Email_user, Password_user;
     private TextView Daftar_user, Forget_user, panah_user;
     private Button Btn_Login_user;
@@ -35,7 +34,7 @@ public class LoginUser extends AppCompatActivity {
         Daftar_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginUser.this,SignupUser.class));
+                startActivity(new Intent(Login.this,Signup.class));
             }
         });
 
@@ -49,7 +48,7 @@ public class LoginUser extends AppCompatActivity {
         Forget_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginUser.this,LupaPassword.class));
+                startActivity(new Intent(Login.this,LupaPassword.class));
             }
         });
 
@@ -68,7 +67,7 @@ public class LoginUser extends AppCompatActivity {
 
                 //check email+pass = null?
                 if (a||b){
-                    Toast.makeText(LoginUser.this,"Email or Password can't be Empty !",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this,"Email or Password can't be Empty !",Toast.LENGTH_LONG).show();
                 }else{
 
                 }

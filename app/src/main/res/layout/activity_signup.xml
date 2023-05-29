@@ -32,16 +32,15 @@
                     android:layout_marginEnd="1dp"
                     android:background="@drawable/panah"></TextView>
 
+
                 <TextView
-                    android:id="@+id/judul"
-                    android:layout_width="250dp"
+                    android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginStart="20dp"
                     android:fontFamily="serif"
                     android:gravity="center"
-                    android:text="Kos Taja"
+                    android:text="Registrasi Akun"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold">
@@ -57,20 +56,6 @@
                 android:layout_below="@+id/header1"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:fontFamily="serif"
-                    android:gravity="center"
-                    android:text="Daftar Akun Pencari Kos"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold">
-
-                </TextView>
 
             </LinearLayout>
 
@@ -127,7 +112,8 @@
                         android:paddingLeft="20dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
-                        app:counterTextColor="@color/black">
+                        app:counterTextColor="@color/black"
+                        android:inputType="textPersonName">
 
                     </EditText>
 
@@ -153,9 +139,33 @@
                         android:paddingLeft="20dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
-                        app:counterTextColor="@color/black">
+                        app:counterTextColor="@color/black"
+                        android:inputType="phone">
 
                     </EditText>
+
+                    <TextView
+                        android:id="@+id/type_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:text="Tipe akun">
+
+                    </TextView>
+
+                    <Spinner
+                        android:id="@+id/tipe_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="4dp"
+                        android:entries="@array/ListUser"
+                        android:textSize="12dp"
+                        android:paddingLeft="10dp"
+                        android:background="@drawable/background_ed">
+                    </Spinner>
 
 
                     <TextView
@@ -180,7 +190,8 @@
                         android:paddingLeft="20dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
-                        app:counterTextColor="@color/black">
+                        app:counterTextColor="@color/black"
+                        android:inputType="textEmailAddress">
 
                     </EditText>
 
