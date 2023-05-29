@@ -28,7 +28,7 @@ public class SesiLogin extends AppCompatActivity {
         Btn_Sesi_User.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent x = new Intent(SesiLogin.this, LoginUser.class);
+                Intent x = new Intent(SesiLogin.this, Login.class);
                 //x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(x);
             }
