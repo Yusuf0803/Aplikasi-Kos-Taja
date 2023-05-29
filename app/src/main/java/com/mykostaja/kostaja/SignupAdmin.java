@@ -41,6 +41,5 @@ public class SignupAdmin extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
     }
 }
