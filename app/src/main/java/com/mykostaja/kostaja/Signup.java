@@ -27,7 +27,7 @@ public class Signup extends AppCompatActivity {
     private Spinner tipe_user;
     private ProgressBar progressBar;
     private AppCompatButton btn_register;
-    private String getemail,getpassword,getusertype,getnomerhp,getrepassword,getusername;
+    private String getEmail,getPassword,getUsertype,getPhone,getRepassword,getUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,27 +71,29 @@ public class Signup extends AppCompatActivity {
     }
 
     private void checkdatauser() {
-        getusertype = tipe_user.getSelectedItem().toString();
-        getusername = Nama_User.getText().toString();
-        getemail = Email_Signup_User.getText().toString();
-        getnomerhp = Nohp_Signup_User.getText().toString();
-        getpassword = Password_Signup_User.getText().toString();
-        getrepassword = Re_Password_Signup_User.getText().toString();
+        getUsertype = tipe_user.getSelectedItem().toString();
+        getUsername = Nama_User.getText().toString();
+        getEmail = Email_Signup_User.getText().toString();
+        getPhone = Nohp_Signup_User.getText().toString();
+        getPassword = Password_Signup_User.getText().toString();
+        getRepassword = Re_Password_Signup_User.getText().toString();
 
         boolean a,b,c,d,e;
-        a = TextUtils.isEmpty(getusername);
-        b = TextUtils.isEmpty(getemail);
-        c = TextUtils.isEmpty(getpassword);
-        d = TextUtils.isEmpty(getnomerhp);
-        e = TextUtils.isEmpty(getrepassword);
+        a = TextUtils.isEmpty(getUsername);
+        b = TextUtils.isEmpty(getEmail);
+        c = TextUtils.isEmpty(getPassword);
+        d = TextUtils.isEmpty(getPhone);
+        e = TextUtils.isEmpty(getRepassword);
 
-        if (!getpassword.equals(getrepassword)){
+
+
+        if (!getPassword.equals(getRepassword)) {
             Toast.makeText(Signup.this,"Password yang anda masukkan tidak sesuai dengan Password awal !",Toast.LENGTH_SHORT).show();
-        }
-
-        if (a||b||c||d||e){
+            progressBar.setVisibility(View.GONE);
+        } else if (a||b||c||d||e){
             Toast.makeText(Signup.this,"Masih tedapat data yang kosong !",Toast.LENGTH_SHORT).show();
-        }else {
+        }
+        else {
             //createUserAccount();
         }
     }
