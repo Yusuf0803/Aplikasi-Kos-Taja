@@ -23,7 +23,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/panah_signup_user"
+                    android:id="@+id/panah_signup"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center_vertical"
@@ -125,7 +125,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/Nama_User"
+                        android:id="@+id/Nama_Signup"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="4dp"
@@ -152,7 +152,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/Nohp_Signup_User"
+                        android:id="@+id/Nohp_Signup"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="4dp"
@@ -181,7 +181,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/Email_Signup_User"
+                        android:id="@+id/Email_Signup"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="4dp"
@@ -217,7 +217,7 @@
                         app:passwordToggleEnabled="true">
 
                         <EditText
-                            android:id="@+id/Password_Signup_User"
+                            android:id="@+id/Password_Signup"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="4dp"
@@ -254,7 +254,7 @@
                         app:passwordToggleEnabled="true">
 
                         <EditText
-                            android:id="@+id/Re_Password_Signup_User"
+                            android:id="@+id/Re_Password_Signup"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="4dp"
@@ -271,7 +271,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/Btn_Signup_User"
+                        android:id="@+id/Btn_Signup"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="25dp"
@@ -301,7 +301,7 @@
                         </TextView>
 
                         <TextView
-                            android:id="@+id/Masuk_Signup_User"
+                            android:id="@+id/Masuk_Signup"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
@@ -328,7 +328,7 @@
         android:gravity="center">
 
         <ProgressBar
-            android:id="@+id/progressbarusersignup"
+            android:id="@+id/Progressbar_Signup"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"

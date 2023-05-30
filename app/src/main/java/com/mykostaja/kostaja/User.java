@@ -1,64 +1,64 @@
 package com.mykostaja.kostaja;
 
 public class User {
-    public String usertype, username, phone, email, password,repassword;
+    public String Usertype, Username, Phone, Email, Password,Repassword;
     private String key;
 
-    public User(String usertype, String username, String phone, String email, String password, String repassword) {
-        this.usertype = usertype;
-        this.username = username;
-        this.phone = phone;
-        this.email = email;
-        this.password = password;
-        this.repassword = repassword;
+    public User(String Usertype, String Username, String Phone, String Email, String Password, String Repassword) {
+        this.Usertype = Usertype;
+        this.Username = Username;
+        this.Phone = Phone;
+        this.Email = Email;
+        this.Password = Password;
+        this.Repassword = Repassword;
     }
 
     public String getUsertype() {
-        return usertype;
+        return Usertype;
     }
 
     public void setUsertype(String usertype) {
-        this.usertype = usertype;
+        Usertype = usertype;
     }
 
     public String getUsername() {
-        return username;
+        return Username;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        Username = username;
     }
 
     public String getPhone() {
-        return phone;
+        return Phone;
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        Phone = phone;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        Password = password;
     }
 
     public String getRepassword() {
-        return repassword;
+        return Repassword;
     }
 
     public void setRepassword(String repassword) {
-        this.repassword = repassword;
+        Repassword = repassword;
     }
 
     public String getKey() {

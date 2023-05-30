@@ -1,5 +1,6 @@
 package com.mykostaja.kostaja;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,40 +25,42 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Signup extends AppCompatActivity {
 
-    private TextView Masuk_Signup_User, panah_signup_user;
-    private EditText Re_Password_Signup_User, Password_Signup_User, Email_Signup_User, Nohp_Signup_User, Nama_User;
+    private TextView Masuk_Signup, panah_signup;
+    private EditText Re_Password_Signup, Password_Signup, Email_Signup, Nohp_Signup, Nama_Signup;
     private Spinner tipe_user;
     private ProgressBar progressBar;
     private AppCompatButton btn_register;
     private FirebaseAuth auth;
     private String getEmail,getPassword,getUsertype,getPhone,getRepassword,getUsername;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
         //Definisi tipe data & data
-        Masuk_Signup_User = findViewById(R.id.Masuk_Signup_User);
-        panah_signup_user = findViewById(R.id.panah_signup_user);
-        Re_Password_Signup_User = findViewById(R.id.Re_Password_Signup_User);
-        Password_Signup_User = findViewById(R.id.Password_Signup_User);
-        Email_Signup_User = findViewById(R.id.Email_Signup_User);
-        Nohp_Signup_User = findViewById(R.id.Nohp_Signup_User);
-        Nama_User = findViewById(R.id.Nama_User);
+        Masuk_Signup = findViewById(R.id.Masuk_Signup);
+        panah_signup = findViewById(R.id.panah_signup);
+        Re_Password_Signup = findViewById(R.id.Re_Password_Signup);
+        Password_Signup = findViewById(R.id.Password_Signup);
+        Email_Signup = findViewById(R.id.Email_Signup);
+        Nohp_Signup = findViewById(R.id.Nohp_Signup);
+        Nama_Signup = findViewById(R.id.Nama_Signup);
         tipe_user = findViewById(R.id.tipe_user);
-        progressBar = findViewById(R.id.progressbarusersignup);
+        progressBar = findViewById(R.id.Progressbar_Signup);
         progressBar.setVisibility(View.GONE);
-        btn_register=findViewById(R.id.Btn_Signup_User);
+        btn_register=findViewById(R.id.Btn_Signup);
+//        auth = FirebaseAuth.getInstance();
 
         //fungsi button
-        panah_signup_user.setOnClickListener(new View.OnClickListener() {
+        panah_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
-        Masuk_Signup_User.setOnClickListener(new View.OnClickListener() {
+        Masuk_Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Signup.this,Login.class));
@@ -75,11 +78,11 @@ public class Signup extends AppCompatActivity {
 
     private void checkdatauser() {
         getUsertype = tipe_user.getSelectedItem().toString();
-        getUsername = Nama_User.getText().toString();
-        getEmail = Email_Signup_User.getText().toString();
-        getPhone = Nohp_Signup_User.getText().toString();
-        getPassword = Password_Signup_User.getText().toString();
-        getRepassword = Re_Password_Signup_User.getText().toString();
+        getUsername = Nama_Signup.getText().toString();
+        getEmail = Email_Signup.getText().toString();
+        getPhone = Nohp_Signup.getText().toString();
+        getPassword = Password_Signup.getText().toString();
+        getRepassword = Re_Password_Signup.getText().toString();
 
         boolean a,b,c,d,e;
         a = TextUtils.isEmpty(getUsername);
