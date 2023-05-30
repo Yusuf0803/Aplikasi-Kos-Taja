@@ -109,7 +109,8 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:textColor="@color/black"
-                        android:text="Tipe akun">
+                        android:textStyle="bold"
+                        android:text="Daftar Sebagai">
 
                     </TextView>
 
@@ -132,6 +133,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:text="Email"
+                        android:textStyle="bold"
                         android:textColor="@color/black">
 
                     </TextView>
@@ -144,7 +146,7 @@
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_ed"
                         android:hint="Email"
-                        android:paddingLeft="20dp"
+                        android:paddingLeft="15dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black">
@@ -159,6 +161,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:text="Password"
+                        android:textStyle="bold"
                         android:textColor="@color/black">
 
                     </TextView>

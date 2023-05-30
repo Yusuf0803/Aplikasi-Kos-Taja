@@ -99,7 +99,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:textColor="@color/black"
-                        android:text="Tipe akun">
+                        android:text="Daftar Sebagai">
 
                     </TextView>
 
@@ -109,8 +109,6 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="4dp"
                         android:entries="@array/ListUser"
-                        android:textSize="12dp"
-                        android:paddingLeft="10dp"
                         android:background="@drawable/background_ed">
                     </Spinner>
 
@@ -133,7 +131,7 @@
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_ed"
                         android:hint="Nama Lengkap"
-                        android:paddingLeft="20dp"
+                        android:paddingLeft="15dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black"
@@ -160,7 +158,7 @@
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_ed"
                         android:hint="Nomor Handphone"
-                        android:paddingLeft="20dp"
+                        android:paddingLeft="15dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black"
@@ -189,7 +187,7 @@
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_ed"
                         android:hint="Email"
-                        android:paddingLeft="20dp"
+                        android:paddingLeft="15dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
                         app:counterTextColor="@color/black"
@@ -228,7 +226,6 @@
                             android:inputType="textPassword"
                             android:longClickable="false"
                             android:padding="0dp"
-                            android:paddingLeft="10dp"
                             android:textColorHint="@color/black"
                             android:textSize="12dp"
                             app:counterTextColor="@color/black"></EditText>
