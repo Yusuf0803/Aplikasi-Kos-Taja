@@ -1,10 +1,5 @@
 package com.mykostaja.kostaja;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,10 +10,17 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class Signup extends AppCompatActivity {
 
@@ -27,6 +29,7 @@ public class Signup extends AppCompatActivity {
     private Spinner tipe_user;
     private ProgressBar progressBar;
     private AppCompatButton btn_register;
+    private FirebaseAuth auth;
     private String getEmail,getPassword,getUsertype,getPhone,getRepassword,getUsername;
 
     @Override
@@ -87,24 +90,25 @@ public class Signup extends AppCompatActivity {
 
 
 
-        if (!getPassword.equals(getRepassword)) {
-            Toast.makeText(Signup.this,"Password yang anda masukkan tidak sesuai dengan Password awal !",Toast.LENGTH_SHORT).show();
-            progressBar.setVisibility(View.GONE);
-        } else if (a||b||c||d||e){
+        if (a||b||c||d||e){
             Toast.makeText(Signup.this,"Masih tedapat data yang kosong !",Toast.LENGTH_SHORT).show();
-        }
-        else {
-            //createUserAccount();
+            progressBar.setVisibility(View.GONE);
+        }else if (!getPassword.equals(getRepassword)) {
+            Toast.makeText(Signup.this, "Password yang anda masukkan tidak sesuai dengan Password awal !", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
+            return;
+        }else {
+           createUserAccount();
         }
     }
 
     //Membuat UserAccount
-    /*private void createUserAccount() {
+    private void createUserAccount() {
         auth.createUserWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull final Task<AuthResult> task) {
-                Pengguna user = new Pengguna (getEmail,getPassword);
-                FirebaseDatabase.getInstance().getReference("Pengguna").setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
+                FirebaseDatabase.getInstance().getReference("User").child(auth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         //cek status keberhasilan saat mendaftarkan email
@@ -113,29 +117,40 @@ public class Signup extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(SignupActivity.this,"Registrasi Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(SignupActivity.this,LoginActivity.class));
+
+                                        Toast.makeText(Signup.this,"Registrasi Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(Signup.this,Login.class));
                                         finish();
+
                                     }else{
-                                        progressBar.setVisibility(View.GONE);
-                                        Toast.makeText(SignupActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+
+                                        Toast.makeText(Signup.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+
                                     }
                                 }
                             });
                         }else{
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(SignupActivity.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(Signup.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                            finish();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         progressBar.setVisibility(View.GONE);
-                        Toast.makeText(SignupActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 });
             }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                finish();
+            }
         });
-    }*/
+    }
 }

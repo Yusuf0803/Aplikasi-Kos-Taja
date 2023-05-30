@@ -1,14 +1,23 @@
 package com.mykostaja.kostaja;
 
 public class User {
-    public String username,email,password,phone,usertype;
+    public String usertype, username, phone, email, password,repassword;
     private String key;
 
-    public User(String username, String email, String password, String phone, String usertype) {
+    public User(String usertype, String username, String phone, String email, String password, String repassword) {
+        this.usertype = usertype;
         this.username = username;
+        this.phone = phone;
         this.email = email;
         this.password = password;
-        this.phone = phone;
+        this.repassword = repassword;
+    }
+
+    public String getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(String usertype) {
         this.usertype = usertype;
     }
 
@@ -18,6 +27,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -36,20 +53,12 @@ public class User {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getRepassword() {
+        return repassword;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getUsertype() {
-        return usertype;
-    }
-
-    public void setUsertype(String usertype) {
-        this.usertype = usertype;
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
     }
 
     public String getKey() {
