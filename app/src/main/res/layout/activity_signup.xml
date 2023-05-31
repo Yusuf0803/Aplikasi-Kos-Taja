@@ -99,7 +99,8 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:textColor="@color/black"
-                        android:text="Daftar Sebagai">
+                        android:text="Daftar Sebagai"
+                        android:fontFamily="serif">
 
                     </TextView>
 
@@ -118,7 +119,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="serif"
                         android:text="Nama Lengkap"
                         android:textColor="@color/black"
                         android:textStyle="bold">
@@ -146,7 +147,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Nomor Handphone"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/black">
 
@@ -175,7 +176,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Email"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/black">
 
@@ -202,7 +203,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Password"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/black">
 
@@ -239,7 +240,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:text="Ulangi Password"
-                        android:fontFamily="sans-serif-light"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/black">
 
