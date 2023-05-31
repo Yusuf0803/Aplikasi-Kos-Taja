@@ -7,8 +7,6 @@ import android.widget.TableLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TableLayout tableLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
