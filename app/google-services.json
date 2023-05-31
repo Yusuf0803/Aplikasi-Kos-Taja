@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "369927833934",
+    "firebase_url": "https://kostaja-817ef-default-rtdb.firebaseio.com",
+    "project_id": "kostaja-817ef",
+    "storage_bucket": "kostaja-817ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369927833934:android:f5cc5794a0d3bf8a40761f",
+        "android_client_info": {
+          "package_name": "com.mykostaja.kostaja"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf5991rp2A39BUvj2yUmfGFmWXWGxjKVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -106,18 +106,21 @@ public class Signup extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Password Minimal 8 Karakter", Toast.LENGTH_SHORT).show();
             progressBar.setVisibility(View.GONE);
         } else {
-            createUserAccount();
+            if (getUsertype.equals("Pemilik Kost")){
+                createUserAccountadmin();
+            }else{
+                createUserAccountuser();
+            }
+
         }
     }
 
-    //Membuat UserAccount
-    private void createUserAccount() {
-
+    private void createUserAccountuser() {
         auth.createUserWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull final Task<AuthResult> task) {
-                User pemilik = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
-                FirebaseDatabase.getInstance().getReference("User").setValue(pemilik).addOnCompleteListener(new OnCompleteListener<Void>() {
+                User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
+                FirebaseDatabase.getInstance().getReference().child("User").child("Pencari").push().setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         //cek status keberhasilan saat mendaftarkan email
@@ -127,7 +130,57 @@ public class Signup extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(Signup.this,"Registrasi Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Signup.this,"Registrasi Sebagai Pencari Kost Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(Signup.this,Login.class));
+                                        finish();
+                                    }else{
+                                        Toast.makeText(Signup.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }else{
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(Signup.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressBar.setVisibility(View.GONE);
+                        Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+    }
+
+    //Membuat Account Admin
+    private void createUserAccountadmin() {
+        auth.createUserWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull final Task<AuthResult> task) {
+                User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
+                FirebaseDatabase.getInstance().getReference().child("User").child("Pemilik").push().setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //cek status keberhasilan saat mendaftarkan email
+                        if (task.isSuccessful()){
+                            progressBar.setVisibility(View.GONE);
+                            auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(Signup.this,"Registrasi Sebagai Pencari Kost Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(Signup.this,Login.class));
                                         finish();
                                     }else{
