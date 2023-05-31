@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 
@@ -32,6 +33,7 @@ public class Signup extends AppCompatActivity {
     private AppCompatButton btn_register;
     private FirebaseAuth auth;
     private String getEmail,getPassword,getUsertype,getPhone,getRepassword,getUsername;
+    private FirebaseUser firebaseUser;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -51,7 +53,7 @@ public class Signup extends AppCompatActivity {
         progressBar = findViewById(R.id.Progressbar_Signup);
         progressBar.setVisibility(View.GONE);
         btn_register=findViewById(R.id.Btn_Signup);
-//        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
 
         //fungsi button
         panah_signup.setOnClickListener(new View.OnClickListener() {
@@ -100,35 +102,36 @@ public class Signup extends AppCompatActivity {
             Toast.makeText(Signup.this, "Password yang anda masukkan tidak sesuai dengan Password awal !", Toast.LENGTH_SHORT).show();
             progressBar.setVisibility(View.GONE);
             return;
-        }else {
-           createUserAccount();
+        } else if (getPassword.length()<8 && getRepassword.length()<8) {
+            Toast.makeText(getApplicationContext(), "Password Minimal 8 Karakter", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
+        } else {
+            createUserAccount();
         }
     }
 
     //Membuat UserAccount
     private void createUserAccount() {
+
         auth.createUserWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull final Task<AuthResult> task) {
-                User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
-                FirebaseDatabase.getInstance().getReference("User").child(auth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                User pemilik = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
+                FirebaseDatabase.getInstance().getReference("User").setValue(pemilik).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         //cek status keberhasilan saat mendaftarkan email
-                        if (task.isSuccessful()){progressBar.setVisibility(View.GONE);
+                        if (task.isSuccessful()){
+                            progressBar.setVisibility(View.GONE);
                             auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-
                                         Toast.makeText(Signup.this,"Registrasi Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(Signup.this,Login.class));
                                         finish();
-
                                     }else{
-
                                         Toast.makeText(Signup.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-
                                     }
                                 }
                             });
