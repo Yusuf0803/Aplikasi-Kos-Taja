@@ -49,10 +49,72 @@
 
                 </TextView>
 
+                <TextView
+                    android:id="@+id/notif_main"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/alarm">
+
+                </TextView>
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/Cari_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/header1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp">
+
+                <EditText
+                    android:id="@+id/cari_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Cari Kos Terdekat.."
+                    android:paddingLeft="10dp"
+                    android:inputType="textPersonName"
+                    android:drawableLeft="@drawable/cari"
+                    android:background="@drawable/background_ed">
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/Cari_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/rekomen_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rekomendasi Kos"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp">
+
+                </TextView>
+
             </LinearLayout>
 
         </RelativeLayout>
 
     </ScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/cardview_shadow_end_color"
+        app:menu="@menu/menu_bottom_nav"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/teal_700">
+
+    </android.support.design.widget.BottomNavigationView>
 
 </RelativeLayout>

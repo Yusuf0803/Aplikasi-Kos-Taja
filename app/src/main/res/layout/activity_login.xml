@@ -109,6 +109,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:textColor="@color/black"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:text="Daftar Sebagai">
 
@@ -133,6 +134,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:text="Email"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/black">
 
@@ -161,6 +163,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:text="Password"
+                        android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/black">
 
