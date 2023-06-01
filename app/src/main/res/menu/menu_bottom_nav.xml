@@ -2,19 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:title="Cari"
-        android:icon="@drawable/cari">
+        android:icon="@drawable/cari"
+        android:id="@+id/cari_kos">
     </item>
+
     <item
         android:title="Kos Saya"
-        android:icon="@drawable/rumah">
+        android:icon="@drawable/rumah"
+        android:id="@+id/Kos_Saya">
     </item>
     <item
         android:title="Chat"
-        android:icon="@drawable/pesan">
+        android:icon="@drawable/pesan"
+        android:id="@+id/Pesan">
     </item>
     <item
         android:title="Profil"
-        android:icon="@drawable/pesan">
+        android:icon="@drawable/orang"
+        android:id="@+id/Profil">
     </item>
-
 </menu>
