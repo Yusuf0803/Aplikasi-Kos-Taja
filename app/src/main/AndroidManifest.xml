@@ -19,18 +19,6 @@
             android:exported="true"
             android:noHistory="true"/>
         <activity
-            android:name=".LoginAdmin"
-            android:exported="true" />
-        <activity
-            android:name=".LoginUser"
-            android:exported="true" />
-        <activity
-            android:name=".SignupAdmin"
-            android:exported="true" />
-        <activity
-            android:name=".SignupUser"
-            android:exported="true" />
-        <activity
             android:name=".SesiLogin"
             android:exported="true" />
         <activity
