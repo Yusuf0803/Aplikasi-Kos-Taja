@@ -19,9 +19,6 @@
             android:exported="true"
             android:noHistory="true"/>
         <activity
-            android:name=".SesiLogin"
-            android:exported="true" />
-        <activity
             android:name=".LupaPassword"
             android:exported="true" />
         <activity
