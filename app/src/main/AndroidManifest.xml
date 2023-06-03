@@ -12,12 +12,15 @@
         android:theme="@style/Theme.AplikasiKosTaja"
         tools:targetApi="31">
         <activity
+            android:name=".Lontong"
+            android:exported="false" />
+        <activity
             android:name=".Signup"
             android:exported="true" />
         <activity
             android:name=".Login"
             android:exported="true"
-            android:noHistory="true"/>
+            android:noHistory="true" />
         <activity
             android:name=".LupaPassword"
             android:exported="true" />
