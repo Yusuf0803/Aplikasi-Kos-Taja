@@ -1,10 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:background="@drawable/shape_top">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profil"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/gambar_profil"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/kostaja">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/nama_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Nama Anda"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textSize="20dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/profil_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profil"
+                    android:layout_marginLeft="90dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:layout_marginTop="35dp"
+                    android:gravity="center">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:id="@+id/pengaturan_profil"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/pengaturan1"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="200dp"
+                    android:text="Pengaturan"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+                <TextView
+                    android:id="@+id/riwayat_profil"
+                    android:layout_below="@id/pengaturan_profil"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/riwayat_transaksi"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="155dp"
+                    android:text="Riwayat Transaksi"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+                <TextView
+                    android:id="@+id/bantuan_profil"
+                    android:layout_below="@id/riwayat_profil"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/bantuan"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="220dp"
+                    android:text="Bantuan"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+                <TextView
+                    android:id="@+id/keluar_profil"
+                    android:layout_below="@id/bantuan_profil"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/logout"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="235dp"
+                    android:text="Keluar"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
