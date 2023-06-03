@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
     tools:context=".MainActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -40,7 +40,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/notif_main"
+                    android:id="@+id/notif_main_user"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginTop="10dp"
@@ -61,7 +61,7 @@
                 android:layout_marginRight="20dp">
 
                 <SearchView
-                    android:id="@+id/cari_main"
+                    android:id="@+id/cari_main_user"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:iconifiedByDefault="false"
@@ -81,7 +81,7 @@
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/rekomen_main"
+                    android:id="@+id/rekomen_main_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rekomendasi Kos"
@@ -95,7 +95,7 @@
             </LinearLayout>
 
             <GridLayout
-                android:id="@+id/Grid_layout"
+                android:id="@+id/Grid_layout_user"
                 android:layout_below="@+id/rekomen_layout"
                 android:layout_width="match_parent"
                 android:layout_height="600dp"
@@ -114,7 +114,8 @@
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="12dp"
                     app:cardElevation="0dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/abu">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -125,6 +126,7 @@
                         android:gravity="center">
 
                         <ImageView
+                            android:id="@+id/gambar1"
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
@@ -157,7 +159,8 @@
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="12dp"
                     app:cardElevation="0dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/abu">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -168,6 +171,7 @@
                         android:gravity="center">
 
                         <ImageView
+                            android:id="@+id/gambar2"
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
@@ -198,7 +202,8 @@
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="12dp"
                     app:cardElevation="0dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/abu">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -209,89 +214,7 @@
                         android:gravity="center">
 
                         <ImageView
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
-                        </ImageView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Selengkapnya tentang Kost ini"
-                            android:textSize="10dp"
-                            android:textAlignment="center"
-                            android:textStyle="normal"
-                            android:fontFamily="serif">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginBottom="12dp"
-                    app:cardElevation="0dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_margin="5dp"
-                        android:layout_gravity="center"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
-                        </ImageView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Selengkapnya tentang Kost ini"
-                            android:textSize="10dp"
-                            android:textAlignment="center"
-                            android:textStyle="normal"
-                            android:fontFamily="serif">
-
-                        </TextView>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginBottom="12dp"
-                    app:cardElevation="0dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_margin="5dp"
-                        android:layout_gravity="center"
-                        android:gravity="center">
-
-                        <ImageView
+                            android:id="@+id/gambar3"
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
@@ -323,7 +246,8 @@
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="12dp"
                     app:cardElevation="0dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/abu">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -334,6 +258,94 @@
                         android:gravity="center">
 
                         <ImageView
+                            android:id="@+id/gambar4"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/kostaja_logo">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selengkapnya tentang Kost ini"
+                            android:textSize="10dp"
+                            android:textAlignment="center"
+                            android:textStyle="normal"
+                            android:fontFamily="serif">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="12dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/abu">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/gambar5"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/kostaja_logo">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selengkapnya tentang Kost ini"
+                            android:textSize="10dp"
+                            android:textAlignment="center"
+                            android:textStyle="normal"
+                            android:fontFamily="serif">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="12dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/abu">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/gambar6"
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"

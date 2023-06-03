@@ -39,7 +39,7 @@ public class Signup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.signup);
 
         //Definisi tipe data & data
         Masuk_Signup = findViewById(R.id.Masuk_Signup);

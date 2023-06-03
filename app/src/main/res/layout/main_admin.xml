@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:background="@drawable/shape_top">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/gambar_main_admin1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:cardCornerRadius="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:id="@+id/gambar_main_admin"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/kostaja">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/nama_main_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Nama Anda"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textSize="20dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/notif_main_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:background="@drawable/alarm"
+                    android:layout_gravity="center">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:id="@+id/pengaturan_main_admin"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/tambah2"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="200dp"
+                    android:text="Tambah Data"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/bantuan_main_admin"
+                    android:layout_below="@id/pengaturan_main_admin"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/bantuan"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="220dp"
+                    android:text="Bantuan"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_bottom"
+        app:menu="@menu/menu_bottom_admin"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/black">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>
