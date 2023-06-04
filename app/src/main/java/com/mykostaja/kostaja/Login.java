@@ -52,11 +52,8 @@ public class Login extends AppCompatActivity {
         progressBar = findViewById(R.id.Progressbar_Login);
         progressBar.setVisibility(View.GONE);
 
-
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-
-
 
         Listener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -125,6 +122,7 @@ public class Login extends AppCompatActivity {
         super.onStart();
         auth.addAuthStateListener(Listener);
     }
+
     @Override
     protected  void  onStop(){
         super.onStop();
@@ -132,7 +130,6 @@ public class Login extends AppCompatActivity {
             auth.removeAuthStateListener(Listener);
         }
     }
-
 
     private void loginuserpencari() {
         auth.signInWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -173,7 +170,6 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-
 
     private void loginuserpemilik() {
         auth.signInWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
