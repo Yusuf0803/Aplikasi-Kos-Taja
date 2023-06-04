@@ -22,6 +22,8 @@ public class LupaPassword extends AppCompatActivity {
     private TextView panah_lupapswd;
     private Button Btn_Verifikasi;
     private String email;
+
+    private FirebaseAuth auth;
     //private FirebaseAuth auth;
 
     @SuppressLint("MissingInflatedId")
@@ -34,6 +36,8 @@ public class LupaPassword extends AppCompatActivity {
         Email_Verifikasi = findViewById(R.id.Email_Verifikasi);
         Btn_Verifikasi = findViewById(R.id.Btn_Verifikasi);
         //auth = FirebaseAuth.getInstance();
+
+        auth = FirebaseAuth.getInstance();
 
         panah_lupapswd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,11 +60,29 @@ public class LupaPassword extends AppCompatActivity {
                 a = email.isEmpty();
 
                 if ((a)){
-                    Email_Verifikasi.setError("Email can't be empty !!!");
+                    Email_Verifikasi.setError("Email can't be empty !!");
                 }else {
+
+                    Forgetpass();
 
                 }
             }
+
+            private  void Forgetpass (){
+                auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(LupaPassword.this, "Cek Email Anda", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LupaPassword.this,Login.class));
+                            finish();
+                        }else {
+                            Toast.makeText(LupaPassword.this, "Error : "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+
         });
     }
 }
