@@ -81,7 +81,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/bantuan_user"
+                    android:id="@+id/pusat_bantuan_user"
                     android:layout_below="@id/WA_user"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"

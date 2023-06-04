@@ -62,8 +62,8 @@ public class profil_user extends AppCompatActivity {
         bantuan_profil_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(profil_user.this, "Belum di konfigurasi", Toast.LENGTH_SHORT).show();
-                return;
+                Intent intent = new Intent(com.mykostaja.kostaja.profil_user.this,bantuan_user.class);
+                startActivity(intent);
             }
         });
 
