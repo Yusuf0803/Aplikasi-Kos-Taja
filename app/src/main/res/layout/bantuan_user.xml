@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/panah_bantuan_user"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@drawable/panah">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Butuh Bantuan?"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:textSize="20dp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_below="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hubungi kami di sini"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:layout_marginTop="15dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/WA_user"
+                    android:layout_below="@id/text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/whatsapp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="225dp"
+                    android:text="WhatsApp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/bantuan_user"
+                    android:layout_below="@id/WA_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/background_tview"
+                    android:drawableLeft="@drawable/bantuan"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="200dp"
+                    android:text="Pusat Bantuan"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
+                </TextView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

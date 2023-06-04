@@ -3,22 +3,22 @@
     <item
         android:title="Cari"
         android:icon="@drawable/cari"
-        android:id="@+id/cari_kos">
+        android:id="@+id/cari_kos_user">
     </item>
 
     <item
         android:title="Kos Saya"
         android:icon="@drawable/rumah"
-        android:id="@+id/Kos_Saya">
+        android:id="@+id/Kos_Saya_user">
     </item>
     <item
         android:title="Chat"
         android:icon="@drawable/pesan"
-        android:id="@+id/Pesan">
+        android:id="@+id/Pesan_user">
     </item>
     <item
         android:title="Profil"
         android:icon="@drawable/orang"
-        android:id="@+id/Profil">
+        android:id="@+id/Profil_user">
     </item>
 </menu>

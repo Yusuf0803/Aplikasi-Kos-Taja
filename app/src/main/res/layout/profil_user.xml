@@ -19,11 +19,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:background="@drawable/shape_top">
+                android:background="@drawable/button_shape">
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/profil"
+                    android:id="@+id/profil_user"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     app:cardCornerRadius="30dp"
@@ -31,7 +31,7 @@
                     android:layout_marginTop="15dp">
 
                     <ImageView
-                        android:id="@+id/gambar_profil"
+                        android:id="@+id/gambar_profil_user"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:scaleType="centerCrop"
@@ -42,7 +42,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/nama_profil"
+                    android:id="@+id/nama_profil_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -55,7 +55,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/profil_edit"
+                    android:id="@+id/edit_profil_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Edit Profil"
@@ -79,7 +79,7 @@
                 android:layout_marginRight="20dp">
 
                 <TextView
-                    android:id="@+id/pengaturan_profil"
+                    android:id="@+id/pengaturan_profil_user"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/background_tview"
@@ -91,9 +91,10 @@
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
+
                 <TextView
-                    android:id="@+id/riwayat_profil"
-                    android:layout_below="@id/pengaturan_profil"
+                    android:id="@+id/riwayat_profil_user"
+                    android:layout_below="@id/pengaturan_profil_user"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
@@ -106,9 +107,10 @@
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
+
                 <TextView
-                    android:id="@+id/bantuan_profil"
-                    android:layout_below="@id/riwayat_profil"
+                    android:id="@+id/bantuan_profil_user"
+                    android:layout_below="@id/riwayat_profil_user"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
@@ -121,9 +123,10 @@
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
+
                 <TextView
-                    android:id="@+id/keluar_profil"
-                    android:layout_below="@id/bantuan_profil"
+                    android:id="@+id/keluar_profil_user"
+                    android:layout_below="@id/bantuan_profil_user"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
