@@ -1,7 +1,9 @@
 package com.mykostaja.kostaja;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class profil_user extends AppCompatActivity {
@@ -75,6 +78,10 @@ public class profil_user extends AppCompatActivity {
                 Intent intent = new Intent(profil_user.this, Login.class);
                 profil_user.this.startActivity(intent);
                 Toast.makeText(profil_user.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
+                SharedPreferences sharedPreferences = getSharedPreferences("UserAuth", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("userLogin",false);
+                editor.apply();
                 finish();
             }
         });

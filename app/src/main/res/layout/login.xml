@@ -133,7 +133,7 @@
                         android:layout_below="@id/gambar"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
-                        android:text="Email"
+                        android:text="No Handphone"
                         android:fontFamily="serif"
                         android:textStyle="bold"
                         android:textColor="@color/black">
@@ -141,16 +141,17 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/Email_user"
+                        android:id="@+id/Nohp_user"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_below="@+id/Email_head"
                         android:layout_marginTop="4dp"
                         android:background="@drawable/background_ed"
-                        android:hint="Email"
+                        android:hint="No Handphone"
                         android:paddingLeft="15dp"
                         android:textColorHint="@color/black"
                         android:textSize="12dp"
+                        android:inputType="phone"
                         app:counterTextColor="@color/black">
 
                     </EditText>
@@ -159,7 +160,7 @@
                         android:id="@+id/Password_head"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/Email_user"
+                        android:layout_below="@id/Nohp_user"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="20dp"
                         android:text="Password"

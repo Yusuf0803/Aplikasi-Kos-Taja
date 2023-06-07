@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -21,28 +24,35 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
-    private EditText Email_user, Password_user;
+    private EditText Nohp_user, Password_user;
     private TextView Daftar_user, Forget_user, panah_user;
     private Button Btn_Login_user;
-    String getPassword,getEmail,getUsertype;
+    String getPassword,getHp,getUsertype;
+    String emailFromDb;
     Spinner tipeuser;
     private FirebaseAuth auth;
-    private FirebaseAuth.AuthStateListener Listener;
+    private FirebaseAuth.AuthStateListener Listener, userAuthListener, adminAuthListener, userListener, adminlistener;
     private FirebaseDatabase firebaseDatabase;
     private ProgressBar progressBar;
+    public SharedPreferences sharedPreferences;
+    public SharedPreferences.Editor editor;
+    public Context contextLogin;
 
 
+    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        Email_user = findViewById(R.id.Email_user);
+        Nohp_user = findViewById(R.id.Nohp_user);
         Password_user = findViewById(R.id.Password_user);
         Daftar_user = findViewById(R.id.Daftar_user);
         Forget_user = findViewById(R.id.Forget_user);
@@ -54,6 +64,49 @@ public class Login extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+
+        contextLogin = this;
+
+
+        sharedPreferences  = getSharedPreferences("UserAuth", Context.MODE_PRIVATE);
+
+        userListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                    startActivity(new Intent(Login.this, MainActivity_User.class));
+                    Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
+                    finish();
+
+            }
+        };
+        userAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (! user.isEmailVerified()){
+                    Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
+                }else {
+                    startActivity(new Intent(Login.this, MainActivity_User.class));
+                    Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            }
+        };
+
+
+        adminAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (! user.isEmailVerified()){
+                    Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
+                }else {
+                    startActivity(new Intent(Login.this, MainActivity_Admin.class));
+                    Toast.makeText(Login.this, "Login Sebagai Pemilik", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            }
+        };
 
         Listener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -94,14 +147,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //mendapatkan data user
-                getEmail=Email_user.getText().toString();
+                getHp = Nohp_user.getText().toString();
                 getPassword=Password_user.getText().toString();
                 getUsertype=tipeuser.getSelectedItem().toString();
                 firebaseDatabase = firebaseDatabase.getReference().getDatabase();
 
                 //Definisi boolean
                 boolean a,b;
-                a = TextUtils.isEmpty(getEmail);
+                a = TextUtils.isEmpty(getHp);
                 b = TextUtils.isEmpty(getPassword);
 
                 //check email+pass = null?
@@ -109,9 +162,9 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this,"Email or Password can't be Empty !",Toast.LENGTH_LONG).show();
                 }else{
                     if (getUsertype.equals("Pencari Kost")){
-                        loginuserpencari();
+                        getUser(getHp);
                     }else {
-                        loginuserpemilik();
+                        getAdmin(getHp);
                     }
                 }
             }
@@ -120,94 +173,143 @@ public class Login extends AppCompatActivity {
 
     protected  void onStart(){
         super.onStart();
-        auth.addAuthStateListener(Listener);
+        if (sharedPreferences.getBoolean("userLogin",false)==true){
+            auth.addAuthStateListener(adminAuthListener);
+        }else if (sharedPreferences.getString("userToken", null) != null){
+            auth.addAuthStateListener(userAuthListener);
+        }else {
+            
+        }
     }
 
     @Override
     protected  void  onStop(){
         super.onStop();
-        if (Listener != null){
-            auth.removeAuthStateListener(Listener);
+        if (adminAuthListener != null){
+            auth.removeAuthStateListener(adminAuthListener);
+        }else if (userAuthListener != null){
+            auth.removeAuthStateListener(userAuthListener);
         }
     }
 
-    private void loginuserpencari() {
-        auth.signInWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void getUser(String Hp){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User").child("Pencari");
+        databaseReference.child(Hp).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if(task.isSuccessful()){
-                    String uid = task.getResult().getUser().getUid();
-                    if (auth.getCurrentUser().isEmailVerified()){
-                        FirebaseDatabase.getInstance().getReference(uid).child("User").child("Pencari").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                String usertype = snapshot.getValue(String.class);
-                                if (usertype != null && usertype.equals("Pencari Kost")){
-                                    Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Login.this, MainActivity_Admin.class);
-                                    startActivity(intent);
-                                }
-                            }
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-                                Toast.makeText(Login.this, "Error", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+                    if (task.getResult().exists()){
+                        DataSnapshot dataSnapshot = task.getResult();
+                        emailFromDb = String.valueOf(dataSnapshot.child("email").getValue());
+                        loginuserpencari();
                     }else {
-                        AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
-                        alert.setTitle("Periksa Email anda untuk verifikasi");
-                        alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int which) {
-                                return;
-                            }
-                        });
-                        alert.create();
-                        alert.show();
+                        Toast.makeText(Login.this, "Akun Pencari Tidak Ada", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
     }
-
-    private void loginuserpemilik() {
-        auth.signInWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void loginuserpencari() {
+        auth.signInWithEmailAndPassword(emailFromDb,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+//                if (task.isSuccessful()){
+//                    auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<GetTokenResult> task) {
+//                            editor = sharedPreferences.edit();
+//                            editor.putString("userToken", task.getResult().getToken());
+//                            editor.apply();
+//                        }
+//                    });
+//                    auth.addAuthStateListener(userAuthListener);
+//                }else {
+//                    Toast.makeText(Login.this, "Login Gagal", Toast.LENGTH_SHORT).show();
+//                }
+                editor = sharedPreferences.edit();
+                editor.putBoolean("userLogin", true);
+                editor.apply();
 
-                if(task.isSuccessful()){
-                    String uid = task.getResult().getUser().getUid();
-                    if (auth.getCurrentUser().isEmailVerified()){
-                        FirebaseDatabase.getInstance().getReference(uid).child("User").child("Pemilik").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                String usertype = snapshot.getValue(String.class);
-                                if (usertype != null && usertype.equals("Pemilik Kost")){
-                                    Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Login.this, MainActivity_Admin.class);
-                                    startActivity(intent);
-                                }
-                            }
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-                                Toast.makeText(Login.this, "Error", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+            }
+        });
+    }
+
+    private void getAdmin(String Hp){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User").child("Pemilik");
+        databaseReference.child(Hp).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+                    if (task.getResult().exists()){
+                        DataSnapshot dataSnapshot = task.getResult();
+                        emailFromDb = String.valueOf(dataSnapshot.child("email").getValue());
+                        loginuserpemilik();
                     }else {
-                        AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
-                        alert.setTitle("Periksa Email anda untuk verifikasi");
-                        alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int which) {
-                                return;
-                            }
-                        });
-                        alert.create();
-                        alert.show();
+                        Toast.makeText(Login.this, "Akun Pemilik Tidak Ada", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
+    }
+    private void loginuserpemilik() {
+        auth.signInWithEmailAndPassword(emailFromDb,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<GetTokenResult> task) {
+                            editor = sharedPreferences.edit();
+                            editor.putString("adminToken", task.getResult().getToken());
+                            editor.apply();
+                        }
+                    });
+                    auth.addAuthStateListener(adminAuthListener);
+                }else {
+                    Toast.makeText(Login.this, "Login Gagal", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+    }
+    public void hapusPrefUser(String user){
+        editor = sharedPreferences.edit();
+        editor.remove(user);
+        editor.apply();
+    }
+
+    public void hapusPrefAdmin(Context context, String admin){
+        sharedPreferences = context.getSharedPreferences("UserAuth",context.MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sharedPreferences.edit();
+        editor2.remove(admin);
+        editor2.apply();
     }
 }
+
+//FirebaseDatabase.getInstance().getReference().child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+//@Override
+//public void onDataChange(@NonNull DataSnapshot snapshot) {
+//        if (snapshot.exists()) {
+//        String email = snapshot.child("email").getValue(String.class);
+//        String password = snapshot.child("password").getValue(String.class);
+//
+//        // Lakukan validasi login
+//        if (inputEmail.equals(email) && inputPassword.equals(password)) {
+//        // Login berhasil
+//        Toast.makeText(LoginActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
+//        // Lanjutkan ke aktivitas berikutnya
+//        } else {
+//        // Login gagal
+//        Toast.makeText(LoginActivity.this, "Login gagal", Toast.LENGTH_SHORT).show();
+//        }
+//        } else {
+//        // User tidak ditemukan
+//        Toast.makeText(LoginActivity.this, "User tidak ditemukan", Toast.LENGTH_SHORT).show();
+//        }
+//        }
+//
+//@Override
+//public void onCancelled(@NonNull DatabaseError error) {
+//        // Handle error
+//        }
+//        });

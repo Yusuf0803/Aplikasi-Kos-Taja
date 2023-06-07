@@ -120,7 +120,7 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull final Task<AuthResult> task) {
                 User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
-                FirebaseDatabase.getInstance().getReference().child("User").child("Pencari").push().setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                FirebaseDatabase.getInstance().getReference("User").child("Pencari").child(getPhone).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         //cek status keberhasilan saat mendaftarkan email
@@ -170,7 +170,7 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull final Task<AuthResult> task) {
                 User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
-                FirebaseDatabase.getInstance().getReference().child("User").child("Pemilik").push().setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                FirebaseDatabase.getInstance().getReference("User").child("Pemilik").child(getPhone).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         //cek status keberhasilan saat mendaftarkan email
@@ -180,7 +180,7 @@ public class Signup extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(Signup.this,"Registrasi Sebagai Pencari Kost Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Signup.this,"Registrasi Sebagai Pemilik Kost Berhasil !!, Please check your email verification",Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(Signup.this,Login.class));
                                         finish();
                                     }else{
