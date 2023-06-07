@@ -335,11 +335,11 @@ public class Add_datakos extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         String imageUrl = uri.toString().trim();
-                        String key = dbF.child("Admin").child("Kos").push().getKey();
+                        String key = dbF.child("Kos").push().getKey();
                         data_kost kos = new data_kost(getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan, getAlamat, getDeskripsi, imageUrl);
                         kos.setKey(key);
 
-                        dbF.child("Admin").child("Kos").child(key)
+                        dbF.child("Kos").child(key)
                                 .setValue(kos)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
