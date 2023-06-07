@@ -37,6 +37,7 @@ public class MainActivity_User extends AppCompatActivity {
                         Toast.makeText(MainActivity_User.this, "Chat", Toast.LENGTH_SHORT).show();
                         MainActivity_User.this.startActivity(intent1);
                         return true;
+
                     case R.id.Profil_user:
                         Intent intent = new Intent(MainActivity_User.this, profil_user.class);
                         Toast.makeText(MainActivity_User.this, "Profil", Toast.LENGTH_SHORT).show();

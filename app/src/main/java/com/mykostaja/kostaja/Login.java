@@ -293,6 +293,7 @@ public class Login extends AppCompatActivity {
         SharedPreferences.Editor editor2 = sharedPreferences.edit();
         editor2.remove(admin);
         editor2.apply();
+
     }
 }
 
