@@ -93,7 +93,6 @@ public class Login extends AppCompatActivity {
             }
         };
 
-
         adminAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -173,12 +172,16 @@ public class Login extends AppCompatActivity {
 
     protected  void onStart(){
         super.onStart();
-        if (sharedPreferences.getBoolean("userLogin",false)==true){
-            auth.addAuthStateListener(adminAuthListener);
-        }else if (sharedPreferences.getString("userToken", null) != null){
-            auth.addAuthStateListener(userAuthListener);
-        }else {
-            
+
+        if (adminAuthListener != null){
+            auth.removeAuthStateListener(adminAuthListener);
+        }else if (userAuthListener != null){
+            auth.removeAuthStateListener(userAuthListener);
+//        if (sharedPreferences.getBoolean("userLogin",false)==true){
+//            auth.addAuthStateListener(adminAuthListener);
+//        }else if (sharedPreferences.getString("userToken", null) != null){
+//            auth.addAuthStateListener(userAuthListener);
+//        }else {
         }
     }
 
@@ -213,22 +216,22 @@ public class Login extends AppCompatActivity {
         auth.signInWithEmailAndPassword(emailFromDb,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-//                if (task.isSuccessful()){
-//                    auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<GetTokenResult> task) {
-//                            editor = sharedPreferences.edit();
-//                            editor.putString("userToken", task.getResult().getToken());
-//                            editor.apply();
-//                        }
-//                    });
-//                    auth.addAuthStateListener(userAuthListener);
-//                }else {
-//                    Toast.makeText(Login.this, "Login Gagal", Toast.LENGTH_SHORT).show();
-//                }
-                editor = sharedPreferences.edit();
-                editor.putBoolean("userLogin", true);
-                editor.apply();
+                if (task.isSuccessful()){
+                    auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<GetTokenResult> task) {
+                            editor = sharedPreferences.edit();
+                            editor.putString("userToken", task.getResult().getToken());
+                            editor.apply();
+                        }
+                    });
+                    auth.addAuthStateListener(userAuthListener);
+                }else {
+                    Toast.makeText(Login.this, "Login Gagal", Toast.LENGTH_SHORT).show();
+                }
+//                editor = sharedPreferences.edit();
+//                editor.putBoolean("userLogin", true);
+//                editor.apply();
 
             }
         });

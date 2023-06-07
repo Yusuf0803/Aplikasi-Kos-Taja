@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:background="@drawable/shape_top">
+                android:background="@drawable/button_shape">
 
 
                 <androidx.cardview.widget.CardView
@@ -58,7 +58,7 @@
                     android:id="@+id/notif_main_admin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="140dp"
                     android:background="@drawable/alarm"
                     android:layout_gravity="center">
 
