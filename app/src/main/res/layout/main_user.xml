@@ -381,8 +381,8 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/shape_bottom"
         app:menu="@menu/menu_bottom_nav"
-        app:itemTextColor="@color/black"
-        app:itemIconTint="@color/black">
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>
