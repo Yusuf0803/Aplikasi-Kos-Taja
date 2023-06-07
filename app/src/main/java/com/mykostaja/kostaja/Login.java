@@ -275,11 +275,18 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-    public void hapusPrefUser(String user){
-        editor = sharedPreferences.edit();
-        editor.remove(user);
-        editor.apply();
+
+    public void hapusPrefUser(Context context, String user){
+        sharedPreferences = context.getSharedPreferences("UserAuth",context.MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sharedPreferences.edit();
+        editor2.remove(user);
+        editor2.apply();
     }
+//    public void hapusPrefUser(String user){
+//        editor = sharedPreferences.edit();
+//        editor.remove(user);
+//        editor.apply();
+//    }
 
     public void hapusPrefAdmin(Context context, String admin){
         sharedPreferences = context.getSharedPreferences("UserAuth",context.MODE_PRIVATE);

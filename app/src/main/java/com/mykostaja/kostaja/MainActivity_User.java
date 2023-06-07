@@ -34,13 +34,15 @@ public class MainActivity_User extends AppCompatActivity {
                         return true;
 
                     case R.id.Pesan_user:
-                        Intent pesan_user = new Intent(MainActivity_User.this,chat_user.class);
-                        Toast.makeText(MainActivity_User.this, "Chat", Toast.LENGTH_SHORT);
-                        MainActivity_User.this.startActivity(pesan_user);
+                        Intent intent1 = new Intent(MainActivity_User.this,chat_user.class);
+                        Toast.makeText(MainActivity_User.this, "Chat", Toast.LENGTH_SHORT).show();
+                        MainActivity_User.this.startActivity(intent1);
+                        return true;
                     case R.id.Profil_user:
                         Intent intent = new Intent(MainActivity_User.this, profil_user.class);
                         Toast.makeText(MainActivity_User.this, "Profil", Toast.LENGTH_SHORT).show();
                         MainActivity_User.this.startActivity(intent);
+                        return true;
                 }
                 return MainActivity_User.super.onOptionsItemSelected(item);
             }
