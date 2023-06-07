@@ -75,7 +75,7 @@
                 android:layout_marginRight="20dp">
 
                 <TextView
-                    android:id="@+id/pengaturan_main_admin"
+                    android:id="@+id/Add"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/background_tview"
@@ -90,7 +90,7 @@
 
                 <TextView
                     android:id="@+id/bantuan_main_admin"
-                    android:layout_below="@id/pengaturan_main_admin"
+                    android:layout_below="@id/Add"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"

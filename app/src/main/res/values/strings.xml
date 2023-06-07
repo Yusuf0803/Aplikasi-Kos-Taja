@@ -4,4 +4,9 @@
         <item>Pencari Kost</item>
         <item>Pemilik Kost</item>
     </string-array>
+    <string-array name="Kosttype">
+        <item>Pria</item>
+        <item>Wanita</item>
+        <item>Campuran</item>
+    </string-array>
 </resources>

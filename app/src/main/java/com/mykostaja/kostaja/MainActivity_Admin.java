@@ -3,6 +3,8 @@ package com.mykostaja.kostaja;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,11 +17,13 @@ import org.checkerframework.common.subtyping.qual.Bottom;
 
 public class MainActivity_Admin extends AppCompatActivity {
 BottomNavigationView bottomNavigationView;
+TextView add;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_admin);
         bottomNavigationView = findViewById(R.id.nav_bottom);
+        add = findViewById(R.id.Add);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -39,6 +43,15 @@ BottomNavigationView bottomNavigationView;
                         return true;
                 }
                 return MainActivity_Admin.super.onOptionsItemSelected(item);
+            }
+        });
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent x = new Intent(MainActivity_Admin.this, Add_datakos.class);
+                startActivity(x);
+                finish();
             }
         });
     }

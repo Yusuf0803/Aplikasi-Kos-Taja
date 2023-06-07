@@ -2,17 +2,18 @@ package com.mykostaja.kostaja;
 
 public class data_kost {
 
-    private String nama_kost;
-    private String tipe_kost;
-    private String nohp_hub;
+    private String nama_kost, tipe_kost, provinsi, kabupaten, kecamatan, alamat, deskripsi, gambar;
     private String key;
 
-    public data_kost(String nama_kost, String tipe_kost, String nohp_hub){
-
+    public data_kost(String nama_kost, String tipe_kost, String provinsi, String kabupaten, String kecamatan, String alamat, String deskripsi, String gambar) {
         this.nama_kost = nama_kost;
         this.tipe_kost = tipe_kost;
-        this.nohp_hub = nohp_hub;
-
+        this.provinsi = provinsi;
+        this.kabupaten = kabupaten;
+        this.kecamatan = kecamatan;
+        this.alamat = alamat;
+        this.deskripsi = deskripsi;
+        this.gambar = gambar;
     }
 
     public String getNama_kost() {
@@ -31,12 +32,51 @@ public class data_kost {
         this.tipe_kost = tipe_kost;
     }
 
-    public String getNohp_hub() {
-        return nohp_hub;
+    public String getProvinsi() {
+        return provinsi;
     }
 
-    public void setNohp_hub(String nohp_hub) {
-        this.nohp_hub = nohp_hub;
+    public void setProvinsi(String provinsi) {
+        this.provinsi = provinsi;
+    }
+
+    public String getKabupaten() {
+        return kabupaten;
+    }
+
+    public void setKabupaten(String kabupaten) {
+        this.kabupaten = kabupaten;
+    }
+
+    public String getKecamatan() {
+        return kecamatan;
+    }
+
+    public void setKecamatan(String kecamatan) {
+        this.kecamatan = kecamatan;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String gambar) {
+        this.deskripsi = deskripsi;
+    }
+  public String getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
     }
 
     public String getKey() {
@@ -46,5 +86,4 @@ public class data_kost {
     public void setKey(String key) {
         this.key = key;
     }
-
 }
