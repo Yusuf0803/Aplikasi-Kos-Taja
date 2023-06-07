@@ -27,16 +27,16 @@ BottomNavigationView bottomNavigationView;
                     case R.id.Home_admin:
                         Intent Homeadmin = new Intent(MainActivity_Admin.this,MainActivity_Admin.class);
                         Toast.makeText(MainActivity_Admin.this, "Menu utama Pemilik Kost", Toast.LENGTH_SHORT);
-                        MainActivity_Admin.this.startActivity(Homeadmin);
                         return true;
                     case R.id.Pesan_admin:
                         Intent Chatadmin = new Intent(MainActivity_Admin.this,chat_admin.class);
                         Toast.makeText(MainActivity_Admin.this, "Chat", Toast.LENGTH_SHORT);
                         MainActivity_Admin.this.startActivity(Chatadmin);
+                        return true;
                     case R.id.Akun_admin:
                         Intent profiladmin = new Intent(MainActivity_Admin.this, profil_admin.class);
-                        Toast.makeText(MainActivity_Admin.this, "Profil akun", Toast.LENGTH_SHORT).show();
                         MainActivity_Admin.this.startActivity(profiladmin);
+                        return true;
                 }
                 return MainActivity_Admin.super.onOptionsItemSelected(item);
             }
