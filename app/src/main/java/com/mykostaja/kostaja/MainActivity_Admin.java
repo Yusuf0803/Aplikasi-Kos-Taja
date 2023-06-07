@@ -29,9 +29,8 @@ BottomNavigationView bottomNavigationView;
                         Toast.makeText(MainActivity_Admin.this, "Menu utama Pemilik Kost", Toast.LENGTH_SHORT);
                         MainActivity_Admin.this.startActivity(Homeadmin);
                         return true;
-
                     case R.id.Pesan_admin:
-                        Intent Chatadmin = new Intent(MainActivity_Admin.this,chat_user.class);
+                        Intent Chatadmin = new Intent(MainActivity_Admin.this,chat_admin.class);
                         Toast.makeText(MainActivity_Admin.this, "Chat", Toast.LENGTH_SHORT);
                         MainActivity_Admin.this.startActivity(Chatadmin);
                     case R.id.Akun_admin:
