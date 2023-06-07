@@ -19,32 +19,28 @@
             <LinearLayout
                 android:id="@+id/header1"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="80dp"
                 android:gravity="start"
                 android:orientation="horizontal">
 
-                <TextView
+                <ImageView
                     android:id="@+id/judul"
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="serif"
-                    android:gravity="center"
-                    android:text="Kos Taja"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold">
+                    android:src="@drawable/kostaja_text"
+                    android:gravity="center">
 
-                </TextView>
+                </ImageView>
 
                 <TextView
                     android:id="@+id/notif_main_user"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="215dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/alarm">
 
                 </TextView>
@@ -86,8 +82,6 @@
                     android:layout_height="wrap_content"
                     android:text="Rekomendasi Kos"
                     android:textColor="@color/black"
-                    android:fontFamily="serif"
-                    android:textStyle="bold"
                     android:layout_marginLeft="20dp">
 
                 </TextView>
@@ -130,7 +124,7 @@
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
+                            android:src="@drawable/question_mark">
 
                         </ImageView>
 
@@ -141,7 +135,8 @@
                             android:text="Selengkapnya tentang Kost ini"
                             android:textAlignment="center"
                             android:textSize="10dp"
-                            android:textStyle="normal">
+                            android:textStyle="normal"
+                            tools:ignore="TextSizeCheck">
 
                         </TextView>
 
@@ -175,17 +170,18 @@
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
+                            android:src="@drawable/question_mark">
                         </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="serif"
                             android:text="Selengkapnya tentang Kost ini"
-                            android:textSize="10dp"
                             android:textAlignment="center"
+                            android:textSize="10dp"
                             android:textStyle="normal"
-                            android:fontFamily="serif">
+                            tools:ignore="TextSizeCheck">
 
                         </TextView>
 
@@ -218,17 +214,18 @@
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
+                            android:src="@drawable/question_mark">
                         </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="serif"
                             android:text="Selengkapnya tentang Kost ini"
-                            android:textSize="10dp"
                             android:textAlignment="center"
+                            android:textSize="10dp"
                             android:textStyle="normal"
-                            android:fontFamily="serif">
+                            tools:ignore="TextSizeCheck">
 
                         </TextView>
 
@@ -262,17 +259,18 @@
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
+                            android:src="@drawable/question_mark">
                         </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="serif"
                             android:text="Selengkapnya tentang Kost ini"
-                            android:textSize="10dp"
                             android:textAlignment="center"
+                            android:textSize="10dp"
                             android:textStyle="normal"
-                            android:fontFamily="serif">
+                            tools:ignore="TextSizeCheck">
 
                         </TextView>
 
@@ -305,17 +303,18 @@
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
+                            android:src="@drawable/question_mark">
                         </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="serif"
                             android:text="Selengkapnya tentang Kost ini"
-                            android:textSize="10dp"
                             android:textAlignment="center"
+                            android:textSize="10dp"
                             android:textStyle="normal"
-                            android:fontFamily="serif">
+                            tools:ignore="TextSizeCheck">
 
                         </TextView>
 
@@ -349,17 +348,18 @@
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/kostaja_logo">
+                            android:src="@drawable/question_mark">
                         </ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="serif"
                             android:text="Selengkapnya tentang Kost ini"
-                            android:textSize="10dp"
                             android:textAlignment="center"
+                            android:textSize="10dp"
                             android:textStyle="normal"
-                            android:fontFamily="serif">
+                            tools:ignore="TextSizeCheck">
 
                         </TextView>
 
@@ -380,8 +380,8 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/shape_bottom"
         app:menu="@menu/menu_bottom_nav"
-        app:itemTextColor="@color/black"
-        app:itemIconTint="@color/black">
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>
