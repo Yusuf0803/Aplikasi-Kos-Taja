@@ -27,7 +27,6 @@ public class MainActivity_User extends AppCompatActivity {
                     case R.id.cari_kos_user:
                         Intent cari_kos_user = new Intent(MainActivity_User.this,MainActivity_User.class);
                         Toast.makeText(MainActivity_User.this, "Cari Kos", Toast.LENGTH_SHORT);
-                        MainActivity_User.this.startActivity(cari_kos_user);
                         return true;
                     case R.id.Kos_Saya_user:
                         Toast.makeText(MainActivity_User.this, "Kos Saya", Toast.LENGTH_SHORT);
