@@ -64,7 +64,6 @@
                     android:queryHint="Cari Kos Terdekat.."
                     android:searchIcon="@drawable/cari"
                     android:inputType="textPersonName"
-                    android:queryBackground=""
                     android:background="@drawable/background_ed">
                 </SearchView>
 
