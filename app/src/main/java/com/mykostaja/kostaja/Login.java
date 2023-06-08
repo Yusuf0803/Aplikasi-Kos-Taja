@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
     private EditText Nohp_user, Password_user;
     private TextView Daftar_user, Forget_user, panah_user;
     private Button Btn_Login_user;
-    String getPassword,getHp,getUsertype;
+    String getPassword, getHp, getUsertype;
     String emailFromDb;
     Spinner tipeuser;
     private FirebaseAuth auth;
@@ -43,7 +43,6 @@ public class Login extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private ProgressBar progressBar;
     public SharedPreferences sharedPreferences;
-    public SharedPreferences.Editor editor;
     public Context contextLogin;
 
 
@@ -68,28 +67,38 @@ public class Login extends AppCompatActivity {
         contextLogin = this;
 
 
-        sharedPreferences  = getSharedPreferences("UserAuth", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("UserAuth", Context.MODE_PRIVATE);
 
         userListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                    startActivity(new Intent(Login.this, MainActivity_User.class));
-                    Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
-                    finish();
+                startActivity(new Intent(Login.this, MainActivity_User.class));
+                Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
+                finish();
 
             }
         };
+
         userAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (! user.isEmailVerified()){
+                if (!user.isEmailVerified()) {
                     Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     startActivity(new Intent(Login.this, MainActivity_User.class));
                     Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
                     finish();
                 }
+            }
+        };
+
+        adminlistener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                startActivity(new Intent(Login.this,MainActivity_Admin.class));
+                Toast.makeText(Login.this, "Login Sebagai Pemilik", Toast.LENGTH_SHORT).show();
+                finish();
             }
         };
 
@@ -97,9 +106,9 @@ public class Login extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (! user.isEmailVerified()){
+                if (!user.isEmailVerified()) {
                     Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     startActivity(new Intent(Login.this, MainActivity_Admin.class));
                     Toast.makeText(Login.this, "Login Sebagai Pemilik", Toast.LENGTH_SHORT).show();
                     finish();
@@ -107,23 +116,21 @@ public class Login extends AppCompatActivity {
             }
         };
 
-        Listener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null && user.isEmailVerified())
-                {
-                    startActivity(new Intent(Login.this, MainActivity_User.class));
-
-                }
-            }
-        };
-
+//        Listener = new FirebaseAuth.AuthStateListener() {
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                FirebaseUser user = firebaseAuth.getCurrentUser();
+//                if (user != null && user.isEmailVerified()) {
+//                    startActivity(new Intent(Login.this, MainActivity_Admin.class));
+//
+//                }
+//            }
+//        };
 
         Daftar_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this,Signup.class));
+                startActivity(new Intent(Login.this, Signup.class));
             }
         });
 
@@ -137,7 +144,7 @@ public class Login extends AppCompatActivity {
         Forget_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this,LupaPassword.class));
+                startActivity(new Intent(Login.this, LupaPassword.class));
             }
         });
 
@@ -147,22 +154,22 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 //mendapatkan data user
                 getHp = Nohp_user.getText().toString();
-                getPassword=Password_user.getText().toString();
-                getUsertype=tipeuser.getSelectedItem().toString();
+                getPassword = Password_user.getText().toString();
+                getUsertype = tipeuser.getSelectedItem().toString();
                 firebaseDatabase = firebaseDatabase.getReference().getDatabase();
 
                 //Definisi boolean
-                boolean a,b;
+                boolean a, b;
                 a = TextUtils.isEmpty(getHp);
                 b = TextUtils.isEmpty(getPassword);
 
                 //check email+pass = null?
-                if (a||b){
-                    Toast.makeText(Login.this,"Email or Password can't be Empty !",Toast.LENGTH_LONG).show();
-                }else{
-                    if (getUsertype.equals("Pencari Kost")){
+                if (a || b) {
+                    Toast.makeText(Login.this, "Email or Password can't be Empty !", Toast.LENGTH_LONG).show();
+                } else {
+                    if (getUsertype.equals("Pencari Kost")) {
                         getUser(getHp);
-                    }else {
+                    } else {
                         getAdmin(getHp);
                     }
                 }
@@ -170,157 +177,113 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    protected  void onStart(){
+    protected void onStart() {
         super.onStart();
-
-        if (adminAuthListener != null){
-            auth.removeAuthStateListener(adminAuthListener);
-        }else if (userAuthListener != null){
-            auth.removeAuthStateListener(userAuthListener);
-//        if (sharedPreferences.getBoolean("userLogin",false)==true){
-//            auth.addAuthStateListener(adminAuthListener);
-//        }else if (sharedPreferences.getString("userToken", null) != null){
-//            auth.addAuthStateListener(userAuthListener);
-//        }else {
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            if (sharedPreferences.getString("adminToken", null) != null) {
+                auth.addAuthStateListener(adminAuthListener);
+            } else if (sharedPreferences.getString("userToken", null) != null) {
+                auth.addAuthStateListener(userAuthListener);
+            }
+        }else {
+            SharedPreferences.Editor editor1 = sharedPreferences.edit();
+            editor1.clear();
+            editor1.apply();
         }
     }
 
     @Override
-    protected  void  onStop(){
+    protected void onStop() {
         super.onStop();
-        if (adminAuthListener != null){
-            auth.removeAuthStateListener(adminAuthListener);
-        }else if (userAuthListener != null){
-            auth.removeAuthStateListener(userAuthListener);
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null){
+            if (sharedPreferences.getString("adminToken", null) != null) {
+                auth.removeAuthStateListener(adminAuthListener);
+            } else if (sharedPreferences.getString("userToken", null) != null) {
+                auth.removeAuthStateListener(userAuthListener);
+            }
         }
     }
 
-    private void getUser(String Hp){
+    private void getUser(String Hp) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User").child("Pencari");
         databaseReference.child(Hp).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (task.isSuccessful()){
-                    if (task.getResult().exists()){
+                if (task.isSuccessful()) {
+                    if (task.getResult().exists()) {
                         DataSnapshot dataSnapshot = task.getResult();
                         emailFromDb = String.valueOf(dataSnapshot.child("email").getValue());
                         loginuserpencari();
-                    }else {
+                    } else {
                         Toast.makeText(Login.this, "Akun Pencari Tidak Ada", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
     }
+
     private void loginuserpencari() {
-        auth.signInWithEmailAndPassword(emailFromDb,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(emailFromDb, getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
                         @Override
                         public void onComplete(@NonNull Task<GetTokenResult> task) {
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor = sharedPreferences.edit();
                             editor.putString("userToken", task.getResult().getToken());
                             editor.apply();
                         }
                     });
                     auth.addAuthStateListener(userAuthListener);
-                }else {
+                } else {
                     Toast.makeText(Login.this, "Login Gagal", Toast.LENGTH_SHORT).show();
                 }
-//                editor = sharedPreferences.edit();
-//                editor.putBoolean("userLogin", true);
-//                editor.apply();
-
             }
         });
     }
 
-    private void getAdmin(String Hp){
+    private void getAdmin(String Hp) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User").child("Pemilik");
         databaseReference.child(Hp).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (task.isSuccessful()){
-                    if (task.getResult().exists()){
+                if (task.isSuccessful()) {
+                    if (task.getResult().exists()) {
                         DataSnapshot dataSnapshot = task.getResult();
                         emailFromDb = String.valueOf(dataSnapshot.child("email").getValue());
                         loginuserpemilik();
-                    }else {
+                    } else {
                         Toast.makeText(Login.this, "Akun Pemilik Tidak Ada", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
     }
+
     private void loginuserpemilik() {
-        auth.signInWithEmailAndPassword(emailFromDb,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(emailFromDb, getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     auth.getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
                         @Override
                         public void onComplete(@NonNull Task<GetTokenResult> task) {
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor = sharedPreferences.edit();
                             editor.putString("adminToken", task.getResult().getToken());
                             editor.apply();
                         }
                     });
                     auth.addAuthStateListener(adminAuthListener);
-                }else {
+                } else {
                     Toast.makeText(Login.this, "Login Gagal", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
     }
-
-    public void hapusPrefUser(Context context, String user){
-        sharedPreferences = context.getSharedPreferences("UserAuth",context.MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = sharedPreferences.edit();
-        editor2.remove(user);
-        editor2.apply();
-    }
-//    public void hapusPrefUser(String user){
-//        editor = sharedPreferences.edit();
-//        editor.remove(user);
-//        editor.apply();
-//    }
-
-    public void hapusPrefAdmin(Context context, String admin){
-        sharedPreferences = context.getSharedPreferences("UserAuth",context.MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = sharedPreferences.edit();
-        editor2.remove(admin);
-        editor2.apply();
-
-    }
 }
-
-//FirebaseDatabase.getInstance().getReference().child("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
-//@Override
-//public void onDataChange(@NonNull DataSnapshot snapshot) {
-//        if (snapshot.exists()) {
-//        String email = snapshot.child("email").getValue(String.class);
-//        String password = snapshot.child("password").getValue(String.class);
-//
-//        // Lakukan validasi login
-//        if (inputEmail.equals(email) && inputPassword.equals(password)) {
-//        // Login berhasil
-//        Toast.makeText(LoginActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
-//        // Lanjutkan ke aktivitas berikutnya
-//        } else {
-//        // Login gagal
-//        Toast.makeText(LoginActivity.this, "Login gagal", Toast.LENGTH_SHORT).show();
-//        }
-//        } else {
-//        // User tidak ditemukan
-//        Toast.makeText(LoginActivity.this, "User tidak ditemukan", Toast.LENGTH_SHORT).show();
-//        }
-//        }
-//
-//@Override
-//public void onCancelled(@NonNull DatabaseError error) {
-//        // Handle error
-//        }
-//        });

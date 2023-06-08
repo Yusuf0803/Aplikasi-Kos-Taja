@@ -18,10 +18,10 @@
             android:name=".chat_admin"
             android:exported="false" />
         <activity
-            android:name=".profil_admin"
+            android:name=".chat_user"
             android:exported="true" />
         <activity
-            android:name=".chat_user"
+            android:name=".profil_admin"
             android:exported="true" />
         <activity
             android:name=".profil_user"

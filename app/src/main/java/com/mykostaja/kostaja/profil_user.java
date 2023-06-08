@@ -30,6 +30,9 @@ public class profil_user extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profil_user);
 
+        gambar_profil_user = findViewById(R.id.gambar_profil_user);
+
+        nama_profil_user = findViewById(R.id.nama_profil_user);
         edit_profil_user = findViewById(R.id.edit_profil_user);
 
         pengaturan_profil_user = findViewById(R.id.pengaturan_profil_user);
@@ -44,7 +47,6 @@ public class profil_user extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         pengaturan_profil_user.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +80,6 @@ public class profil_user extends AppCompatActivity {
                 Intent intent = new Intent(profil_user.this, Login.class);
                 profil_user.this.startActivity(intent);
                 Toast.makeText(profil_user.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
-                SharedPreferences sharedPreferences = getSharedPreferences("UserAuth", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("userLogin",false);
-                editor.apply();
                 finish();
             }
         });

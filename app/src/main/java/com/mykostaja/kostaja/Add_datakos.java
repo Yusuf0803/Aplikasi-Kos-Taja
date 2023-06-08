@@ -194,19 +194,6 @@
 //    }
 //
 //}
-
-
-
-
-
-
-
-
-
-
-
-
-
 package com.mykostaja.kostaja;
 
 import androidx.annotation.NonNull;
@@ -289,6 +276,7 @@ public class Add_datakos extends AppCompatActivity {
             public void onClick(View v) {
                 boolean a, b, c, d, e, f, g;
 
+
                 getNama_kost = nama_kost.getText().toString();
                 getTipe_kost = tipe_kost.getSelectedItem().toString();
                 getProvinsi = provinsi.getText().toString();
@@ -352,11 +340,12 @@ public class Add_datakos extends AppCompatActivity {
                                             kecamatan.setText("");
                                             alamat.setText("");
                                             deskripsi.setText("");
-                                            image_create.setImageDrawable(null);
+//                                            image_create.setImageDrawable(null);
+                                            image_create.setImageBitmap(null);
 
                                             Toast.makeText(Add_datakos.this, "Kos berhasil ditambahkan", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(Add_datakos.this, MainActivity_Admin.class));
-                                            finish();
+//                                            finish();
                                         } else {
                                             Toast.makeText(Add_datakos.this, "Gagal menyimpan data", Toast.LENGTH_SHORT).show();
                                         }
@@ -390,14 +379,18 @@ public class Add_datakos extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case REQUEST_CODE_CAMERA:
-                    image_create.setVisibility(View.VISIBLE);
-                    Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                    image_create.setImageBitmap(bitmap);
+                    if (resultCode == RESULT_OK){
+                        image_create.setVisibility(View.VISIBLE);
+                        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                        image_create.setImageBitmap(bitmap);
+                    }
                     break;
                 case REQUEST_CODE_GALLERY:
-                    image_create.setVisibility(View.VISIBLE);
-                    Uri imageUri = data.getData();
-                    image_create.setImageURI(imageUri);
+                    if (resultCode == RESULT_OK){
+                        image_create.setVisibility(View.VISIBLE);
+                        Uri imageUri = data.getData();
+                        image_create.setImageURI(imageUri);
+                    }
                     break;
             }
         }

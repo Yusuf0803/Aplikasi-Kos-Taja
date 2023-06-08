@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:background="@drawable/button_shape">
+                android:background="@drawable/button_shape_top">
 
 
                 <androidx.cardview.widget.CardView
