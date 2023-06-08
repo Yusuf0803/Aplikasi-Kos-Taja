@@ -346,6 +346,8 @@ public class Add_datakos extends AppCompatActivity {
                                             Toast.makeText(Add_datakos.this, "Kos berhasil ditambahkan", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(Add_datakos.this, MainActivity_Admin.class));
 //                                            finish();
+
+
                                         } else {
                                             Toast.makeText(Add_datakos.this, "Gagal menyimpan data", Toast.LENGTH_SHORT).show();
                                         }
