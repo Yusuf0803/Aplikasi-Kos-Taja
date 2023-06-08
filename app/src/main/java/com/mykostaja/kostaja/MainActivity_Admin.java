@@ -52,7 +52,7 @@ public class MainActivity_Admin extends AppCompatActivity {
             public void onClick(View v) {
                 Intent x = new Intent(MainActivity_Admin.this, Add_datakos.class);
                 startActivity(x);
-//                finish();
+
             }
         });
 

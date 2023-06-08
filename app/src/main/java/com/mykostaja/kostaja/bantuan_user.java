@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class bantuan_user extends AppCompatActivity {
-
     private TextView panah_bantuan_user, WA_user, pusat_bantuan_user;
 
     @SuppressLint("MissingInflatedId")
