@@ -100,6 +100,7 @@
                 android:columnOrderPreserved="false">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView1"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_columnWeight="1"
@@ -129,6 +130,7 @@
                         </ImageView>
 
                         <TextView
+                            android:id="@+id/deskripsi1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
@@ -146,6 +148,7 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView2"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_columnWeight="1"
@@ -174,6 +177,7 @@
                         </ImageView>
 
                         <TextView
+                            android:id="@+id/deskripsi2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
@@ -190,6 +194,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView3"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_columnWeight="1"
@@ -218,6 +223,7 @@
                         </ImageView>
 
                         <TextView
+                            android:id="@+id/deskripsi3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
@@ -235,6 +241,7 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView4"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_columnWeight="1"
@@ -263,6 +270,7 @@
                         </ImageView>
 
                         <TextView
+                            android:id="@+id/deskripsi4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
@@ -279,6 +287,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView5"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_columnWeight="1"
@@ -307,6 +316,7 @@
                         </ImageView>
 
                         <TextView
+                            android:id="@+id/deskripsi5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
@@ -324,6 +334,7 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView6"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_columnWeight="1"
@@ -352,6 +363,7 @@
                         </ImageView>
 
                         <TextView
+                            android:id="@+id/deskripsi6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="serif"
