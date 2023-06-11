@@ -17,6 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -27,8 +31,8 @@
 
                 <ImageView
                     android:id="@+id/image_create"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:background="@drawable/orang"
@@ -38,7 +42,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/Cphoto"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:text="Pilih Foto"
                     android:background="@drawable/button_shape">
@@ -49,8 +53,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="15dp"
-                android:padding="10dp"
                 android:orientation="vertical"
                 android:layout_marginTop="15dp">
                 <TextView
@@ -76,9 +78,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="15dp"
-                android:padding="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -103,9 +104,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="15dp"
-                android:padding="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -115,92 +115,122 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="serif"
                         android:text="Provinsi"
-                        android:textSize="15dp"
-                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:fontFamily="serif">
-                    </TextView>
+                        android:textSize="15dp"
+                        android:textStyle="bold"></TextView>
 
                     <Spinner
                         android:id="@+id/Cprovinsi_kos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:entries="@array/Provinsi"
-                        tools:ignore="TouchTargetSizeCheck">
-                    </Spinner>
+                        tools:ignore="TouchTargetSizeCheck"></Spinner>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="serif"
                         android:text="Kabupaten"
-                        android:textSize="15dp"
-                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:fontFamily="serif">
-                    </TextView>
+                        android:textSize="15dp"
+                        android:textStyle="bold"></TextView>
 
                     <Spinner
                         android:id="@+id/Ckabupaten_kos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:entries="@array/Kabupaten"
-                        tools:ignore="TouchTargetSizeCheck">
-                    </Spinner>
+                        tools:ignore="TouchTargetSizeCheck"></Spinner>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="serif"
                         android:text="Kecamatan"
-                        android:textSize="15dp"
-                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:fontFamily="serif">
-                    </TextView>
+                        android:textSize="15dp"
+                        android:textStyle="bold"></TextView>
 
                     <Spinner
+                        android:id="@+id/Ckecamatan_kos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/Ckecamatan_kos"
                         android:entries="@array/Kecamatan"
-                        tools:ignore="TouchTargetSizeCheck">
-                    </Spinner>
+                        tools:ignore="TouchTargetSizeCheck"></Spinner>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
-                        android:text="Alamat"
-                        android:textSize="15dp"
-                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="Status Kost"
                         android:textColor="@color/black"
-                        android:fontFamily="serif">
-                    </TextView>
+                        android:textSize="15dp"
+                        android:textStyle="bold"></TextView>
 
 
                     <EditText
+                        android:id="@+id/Cstatus_kost"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="serif"
+                        android:hint="ex: kosong 1 atau penuh"
+                        android:inputType="textMultiLine"></EditText>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="serif"
+                        android:text="Luas Kamar"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold"></TextView>
+
+
+                    <EditText
+                        android:id="@+id/Cluas_kamar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="serif"
+                        android:hint="Luas Kamar"
+                        android:inputType="textMultiLine"></EditText>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="serif"
+                        android:text="Alamat"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold"></TextView>
+
+
+                    <EditText
                         android:id="@+id/Calamatlengkapkos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="serif"
+                        android:ems="50"
                         android:hint="Alamat Lengkap"
-                        android:inputType="textMultiLine"
-                        android:fontFamily="serif">
-                    </EditText>
+                        android:inputType="textMultiLine"></EditText>
 
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Deskripsi Kos"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="serif">
-                </TextView>
+                    android:fontFamily="serif"
+                    android:text="Deskripsi Kos"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -208,13 +238,13 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:id="@+id/Cdeskkos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/Cdeskkos"
-                        android:inputType="textMultiLine"
+                        android:fontFamily="serif"
+                        android:ems="50"
                         android:hint="Deskripsikan Kos"
-                        android:fontFamily="serif">
-                    </EditText>
+                        android:inputType="textMultiLine"></EditText>
 
                 </LinearLayout>
 

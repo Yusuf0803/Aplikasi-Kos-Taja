@@ -16,6 +16,9 @@
             android:name=".Add_datakos"
             android:exported="false" />
         <activity
+            android:name=".Detail_kos"
+            android:exported="false" />
+        <activity
             android:name=".chat_admin"
             android:exported="false" />
         <activity
@@ -33,9 +36,6 @@
         <activity
             android:name=".edit_profil"
             android:exported="true" />
-        <activity
-            android:name=".Lontong"
-            android:exported="false" />
         <activity
             android:name=".Signup"
             android:exported="true" />
