@@ -46,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            //Menginisialisasi view yang terpasang pada layout view data kos
+        //Menginisialisasi view yang terpasang pada layout view data kos
 
 
         }

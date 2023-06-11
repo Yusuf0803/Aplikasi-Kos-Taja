@@ -4,9 +4,37 @@
         <item>Pencari Kost</item>
         <item>Pemilik Kost</item>
     </string-array>
+
     <string-array name="Kosttype">
         <item>Pria</item>
         <item>Wanita</item>
         <item>Campuran</item>
     </string-array>
+
+    <string-array name="Provinsi">
+        <item>Jawa Tengah</item>
+        <item>Jawa Timur</item>
+        <item>Jawa Barat</item>
+    </string-array>
+
+    <string-array name="Kabupaten">
+        <item>Banyumas</item>
+        <item>Cilacap</item>
+        <item>Banjarnegara</item>
+        <item>Purbalingga</item>
+    </string-array>
+
+    <string-array name="Kecamatan">
+        <item>Purwokerto Timur</item>
+        <item>Purwokerto Barat</item>
+        <item>Purwokerto Selatan</item>
+        <item>Purwokerto Utara</item>
+        <item>Lumbir</item>
+        <item>Sokaraja</item>
+        <item>Pekuncen</item>
+    </string-array>
+
+
+
+
 </resources>

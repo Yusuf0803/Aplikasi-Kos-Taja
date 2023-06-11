@@ -35,13 +35,14 @@
                     android:contentDescription="TODO">
                 </ImageView>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Cphoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Pilih Foto"
-                    android:id="@+id/Cphoto">
-                </Button>
+                    android:background="@drawable/button_shape">
+                </androidx.appcompat.widget.AppCompatButton>
 
             </LinearLayout>
 
@@ -55,16 +56,19 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Nama Kost Anda"
-                    android:textSize="20dp"
-                    android:textStyle="bold">
+                    android:text="Nama Kost"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif">
                 </TextView>
 
                 <EditText
+                    android:id="@+id/Cnama_kos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/Cnama_kos"
-                    android:hint="Nama Kost Anda">
+                    android:hint="Nama Kost"
+                    android:fontFamily="serif">
                 </EditText>
 
             </LinearLayout>
@@ -75,21 +79,25 @@
                 android:paddingTop="15dp"
                 android:padding="10dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Tipe Kost Anda"
-                    android:textSize="20dp"
-                    android:textStyle="bold">
+                    android:text="Tipe Kost"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="serif">
                 </TextView>
 
                <Spinner
+                   android:id="@+id/Ctipe_kos"
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
                    android:entries="@array/Kosttype"
-                   tools:ignore="TouchTargetSizeCheck"
-                   android:id="@+id/Ctipe_kos">
+                   tools:ignore="TouchTargetSizeCheck">
                </Spinner>
+
             </LinearLayout>
 
             <LinearLayout
@@ -98,12 +106,100 @@
                 android:paddingTop="15dp"
                 android:padding="10dp"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Provinsi"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="serif">
+                    </TextView>
+
+                    <Spinner
+                        android:id="@+id/Cprovinsi_kos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:entries="@array/Provinsi"
+                        tools:ignore="TouchTargetSizeCheck">
+                    </Spinner>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="Kabupaten"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="serif">
+                    </TextView>
+
+                    <Spinner
+                        android:id="@+id/Ckabupaten_kos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:entries="@array/Kabupaten"
+                        tools:ignore="TouchTargetSizeCheck">
+                    </Spinner>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="Kecamatan"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="serif">
+                    </TextView>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/Ckecamatan_kos"
+                        android:entries="@array/Kecamatan"
+                        tools:ignore="TouchTargetSizeCheck">
+                    </Spinner>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="Alamat"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="serif">
+                    </TextView>
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/Calamatlengkapkos"
+                        android:hint="Alamat Lengkap"
+                        android:inputType="textMultiLine"
+                        android:fontFamily="serif">
+                    </EditText>
+
+                </LinearLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Alamat"
-                    android:textSize="20dp"
-                    android:textStyle="bold">
+                    android:text="Deskripsi Kos"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif">
                 </TextView>
 
                 <LinearLayout
@@ -114,56 +210,12 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/Cprovinsi_kos"
-                        android:hint="Provinsi.....">
-                    </EditText>
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/Ckabupaten_kos"
-                        android:hint="Kabupaten....">
-                    </EditText>
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/Ckecamatan_kos"
-                        android:hint="Kecamatan....">
-                    </EditText>
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/Calamatlengkapkos"
-                        android:hint="Alamat Lengkap...."
-                        android:inputType="textMultiLine">
-                    </EditText>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Deskripsi Kos"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:paddingTop="10dp">
-                </TextView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingTop="15dp">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
                         android:id="@+id/Cdeskkos"
                         android:inputType="textMultiLine"
-                        android:hint="Deskripsikan Kos Anda.....">
+                        android:hint="Deskripsikan Kos"
+                        android:fontFamily="serif">
                     </EditText>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -173,12 +225,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center">
-                <Button
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Csimpan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SIMPAN"
-                    android:id="@+id/Csimpan">
-                </Button>
+                    android:background="@drawable/button_shape">
+                </androidx.appcompat.widget.AppCompatButton>
+
             </LinearLayout>
 
         </LinearLayout>
