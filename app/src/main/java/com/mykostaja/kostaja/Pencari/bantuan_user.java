@@ -1,4 +1,4 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.Pencari;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.mykostaja.kostaja.R;
 
 public class bantuan_user extends AppCompatActivity {
     private TextView panah_bantuan_user, WA_user, pusat_bantuan_user;

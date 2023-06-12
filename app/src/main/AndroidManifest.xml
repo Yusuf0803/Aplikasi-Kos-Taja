@@ -19,19 +19,19 @@
             android:name=".Detail_kos"
             android:exported="false" />
         <activity
-            android:name=".chat_admin"
+            android:name=".Pemilik.chat_admin"
             android:exported="false" />
         <activity
-            android:name=".chat_user"
+            android:name=".Pencari.chat_user"
             android:exported="true" />
         <activity
-            android:name=".profil_admin"
+            android:name=".Pemilik.profil_admin"
             android:exported="true" />
         <activity
-            android:name=".profil_user"
+            android:name=".Pencari.profil_user"
             android:exported="true" />
         <activity
-            android:name=".bantuan_user"
+            android:name=".Pencari.bantuan_user"
             android:exported="true" />
         <activity
             android:name=".edit_profil"
@@ -47,10 +47,10 @@
             android:name=".LupaPassword"
             android:exported="true" />
         <activity
-            android:name=".MainActivity_Admin"
+            android:name=".Pemilik.MainActivity_Admin"
             android:exported="true" />
         <activity
-            android:name=".MainActivity_User"
+            android:name=".Pencari.MainActivity_User"
             android:exported="true" />
         <activity
             android:name=".SplashScreen"

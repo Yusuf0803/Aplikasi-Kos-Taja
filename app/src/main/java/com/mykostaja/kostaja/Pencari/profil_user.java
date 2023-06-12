@@ -1,9 +1,7 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.Pencari;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,8 +11,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.google.firebase.auth.FirebaseAuth;
+import com.mykostaja.kostaja.Login;
+import com.mykostaja.kostaja.R;
+import com.mykostaja.kostaja.edit_profil;
 
 public class profil_user extends AppCompatActivity {
 
@@ -43,7 +43,7 @@ public class profil_user extends AppCompatActivity {
         edit_profil_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(profil_user.this,edit_profil.class);
+                Intent intent = new Intent(profil_user.this, edit_profil.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +67,7 @@ public class profil_user extends AppCompatActivity {
         bantuan_profil_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(com.mykostaja.kostaja.profil_user.this,bantuan_user.class);
+                Intent intent = new Intent(com.mykostaja.kostaja.Pencari.profil_user.this,bantuan_user.class);
                 startActivity(intent);
             }
         });

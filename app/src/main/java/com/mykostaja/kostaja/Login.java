@@ -1,12 +1,10 @@
 package com.mykostaja.kostaja;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,10 +24,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.mykostaja.kostaja.Pemilik.MainActivity_Admin;
+import com.mykostaja.kostaja.Pencari.MainActivity_User;
 
 public class Login extends AppCompatActivity {
     private EditText Nohp_user, Password_user;
@@ -96,7 +94,7 @@ public class Login extends AppCompatActivity {
         adminlistener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                startActivity(new Intent(Login.this,MainActivity_Admin.class));
+                startActivity(new Intent(Login.this, MainActivity_Admin.class));
                 Toast.makeText(Login.this, "Login Sebagai Pemilik", Toast.LENGTH_SHORT).show();
                 finish();
             }

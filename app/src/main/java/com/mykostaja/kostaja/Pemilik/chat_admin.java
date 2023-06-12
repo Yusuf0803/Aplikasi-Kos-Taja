@@ -1,8 +1,10 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.Pemilik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.mykostaja.kostaja.R;
 
 public class chat_admin extends AppCompatActivity {
 
