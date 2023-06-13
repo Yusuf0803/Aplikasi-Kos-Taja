@@ -5,17 +5,17 @@ public class data_kost {
     private String nama_kost, tipe_kost, provinsi, kabupaten, kecamatan, alamat, fasilitas, status, luas,gambar;
     private String key;
 
-    public data_kost(String nama_kost, String tipe_kost, String provinsi, String kabupaten, String kecamatan, String alamat, String fasilitas, String status, String luas) {
+    public data_kost(String nama_kost, String tipe_kost, String provinsi, String kabupaten, String kecamatan, String alamat, String fasilitas, String status, String luas, String imageUrl) {
         this.nama_kost = nama_kost;
         this.tipe_kost = tipe_kost;
         this.provinsi = provinsi;
         this.kabupaten = kabupaten;
         this.kecamatan = kecamatan;
-        this.alamat = alamat;
-        this.fasilitas = fasilitas;
         this.status = status;
         this.luas = luas;
-        this.gambar = gambar;
+        this.alamat = alamat;
+        this.fasilitas = fasilitas;
+        this.gambar = imageUrl;
     }
 
     public String getNama_kost() {
@@ -74,14 +74,6 @@ public class data_kost {
         this.fasilitas = fasilitas;
     }
 
-    public String getGambar() {
-        return gambar;
-    }
-
-    public void setGambar(String gambar) {
-        this.gambar = gambar;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -96,6 +88,14 @@ public class data_kost {
 
     public void setLuas(String luas) {
         this.luas = luas;
+    }
+
+    public String getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
     }
 
     public String getKey() {
