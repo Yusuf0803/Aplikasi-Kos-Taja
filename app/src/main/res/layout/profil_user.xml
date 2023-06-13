@@ -85,10 +85,10 @@
                     android:layout_height="60dp"
                     android:background="@drawable/background_tview"
                     android:drawableLeft="@drawable/pengaturan1"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="200dp"
                     android:text="Pengaturan"
-                    android:gravity="center"
+                    android:drawablePadding="10dp"
+                    android:paddingLeft="20dp"
+                    android:gravity="start|center_vertical"
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
@@ -101,10 +101,10 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/background_tview"
                     android:drawableLeft="@drawable/riwayat_transaksi"
+                    android:drawablePadding="10dp"
                     android:paddingLeft="20dp"
-                    android:paddingRight="155dp"
+                    android:gravity="start|center_vertical"
                     android:text="Riwayat Transaksi"
-                    android:gravity="center"
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
@@ -117,10 +117,10 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/background_tview"
                     android:drawableLeft="@drawable/bantuan"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="220dp"
                     android:text="Bantuan"
-                    android:gravity="center"
+                    android:drawablePadding="10dp"
+                    android:paddingLeft="20dp"
+                    android:gravity="start|center_vertical"
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
@@ -133,10 +133,10 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/background_tview"
                     android:drawableLeft="@drawable/logout"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="235dp"
                     android:text="Keluar"
-                    android:gravity="center"
+                    android:drawablePadding="10dp"
+                    android:paddingLeft="20dp"
+                    android:gravity="start|center_vertical"
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>

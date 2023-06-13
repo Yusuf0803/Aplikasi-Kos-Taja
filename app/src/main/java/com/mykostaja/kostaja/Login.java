@@ -81,12 +81,15 @@ public class Login extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (!user.isEmailVerified()) {
-                    Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
-                } else {
-                    startActivity(new Intent(Login.this, MainActivity_User.class));
-                    Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
-                    finish();
+
+                if (user != null){
+                    if (!user.isEmailVerified()) {
+                        Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
+                    } else {
+                        startActivity(new Intent(Login.this, MainActivity_User.class));
+                        Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
             }
         };
@@ -104,12 +107,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (!user.isEmailVerified()) {
-                    Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
-                } else {
-                    startActivity(new Intent(Login.this, MainActivity_Admin.class));
-                    Toast.makeText(Login.this, "Login Sebagai Pemilik", Toast.LENGTH_SHORT).show();
-                    finish();
+                if (user != null){
+                    if (!user.isEmailVerified()) {
+                        Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
+                    } else {
+                        startActivity(new Intent(Login.this, MainActivity_Admin.class));
+                        Toast.makeText(Login.this, "Login Sebagai Pemilik", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
             }
         };

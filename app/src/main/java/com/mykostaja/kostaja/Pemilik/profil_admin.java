@@ -1,6 +1,7 @@
 package com.mykostaja.kostaja.Pemilik;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.mykostaja.kostaja.Login;
+import com.mykostaja.kostaja.Pencari.profil_user;
 import com.mykostaja.kostaja.R;
 
 public class profil_admin extends AppCompatActivity {
@@ -72,14 +75,29 @@ public class profil_admin extends AppCompatActivity {
         keluar_profil_admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(profil_admin.this, Login.class);
-                profil_admin.this.startActivity(intent);
-                Toast.makeText(profil_admin.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
-                finish();
+                AlertDialog.Builder builder = new AlertDialog.Builder(profil_admin.this);
+                builder.setTitle("Konfirmasi");
+                builder.setMessage("Apakah Anda yakin ingin keluar?");
+                builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Perform the exit action here
+                        FirebaseAuth.getInstance().signOut();
+                        Intent x = new Intent(profil_admin.this, Login.class);
+                        // set the new task and clear flags
+                        x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(x);
+                    }
+                });
+                builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Continue with the app
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
-        return;
     }
 }
