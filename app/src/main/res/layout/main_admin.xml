@@ -72,37 +72,50 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <TextView
-                    android:id="@+id/Add"
+                android:layout_marginRight="20dp"
+                android:foregroundGravity="center">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="@drawable/background_tview"
-                    android:drawableLeft="@drawable/tambah2"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="200dp"
-                    android:text="Tambah Data"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif">
-                </TextView>
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/header1"
+                    android:id="@+id/LAYOUTADD">
 
-                <TextView
-                    android:id="@+id/bantuan_main_admin"
-                    android:layout_below="@id/Add"
+                    <TextView
+                        android:id="@+id/Add"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/background_tview"
+                        android:drawableLeft="@drawable/tambah2"
+                        android:text="Tambah Data"
+                        android:paddingLeft="20dp"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:fontFamily="serif"
+                        android:drawablePadding="10dp">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/background_tview"
-                    android:drawableLeft="@drawable/bantuan"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="220dp"
-                    android:text="Bantuan"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif">
-                </TextView>
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/LAYOUTADD">
+                    <TextView
+                        android:id="@+id/bantuan_main_admin"
+                        android:layout_below="@id/Add"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/background_tview"
+                        android:drawableLeft="@drawable/bantuan"
+                        android:text="Bantuan"
+                        android:paddingLeft="20dp"
+                        android:drawablePadding="10dp"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/black"
+                        android:fontFamily="serif">
+                    </TextView>
+
+                </LinearLayout>
 
             </RelativeLayout>
 
