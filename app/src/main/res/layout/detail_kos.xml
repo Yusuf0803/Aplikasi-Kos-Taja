@@ -310,6 +310,7 @@
                 android:textStyle="bold">
             </TextView>
 
+
             <TextView
                 android:id="@+id/fasilitas_detail"
                 android:layout_below="@+id/t9"

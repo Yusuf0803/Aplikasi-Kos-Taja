@@ -17,7 +17,6 @@ public class data_kost {
         this.fasilitas = fasilitas;
         this.gambar = imageUrl;
     }
-
     public String getNama_kost() {
         return nama_kost;
     }
