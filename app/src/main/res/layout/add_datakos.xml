@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
     tools:context=".Add_datakos">
 
     <ScrollView
@@ -17,10 +15,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -36,233 +34,276 @@
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:background="@drawable/orang"
-                    android:contentDescription="TODO">
-                </ImageView>
+                    android:contentDescription="TODO"></ImageView>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/Cphoto"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
-                    android:text="Pilih Foto"
-                    android:background="@drawable/button_shape">
-                </androidx.appcompat.widget.AppCompatButton>
+                    android:background="@drawable/button_shape"
+                    android:text="Pilih Foto"></androidx.appcompat.widget.AppCompatButton>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="serif"
                     android:text="Nama Kost"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:fontFamily="serif">
-                </TextView>
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
 
                 <EditText
                     android:id="@+id/Cnama_kos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Nama Kost"
-                    android:fontFamily="serif">
-                </EditText>
+                    android:fontFamily="serif"
+                    android:hint="Nama Kost"></EditText>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="serif"
                     android:text="Tipe Kost"
-                    android:textSize="15dp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:fontFamily="serif">
-                </TextView>
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
 
-               <Spinner
-                   android:id="@+id/Ctipe_kos"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:entries="@array/Kosttype"
-                   tools:ignore="TouchTargetSizeCheck">
-               </Spinner>
+                <Spinner
+                    android:id="@+id/Ctipe_kos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/Kosttype"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:fontFamily="serif"
+                    android:text="Provinsi"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="serif"
-                        android:text="Provinsi"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
-
-                    <Spinner
-                        android:id="@+id/Cprovinsi_kos"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:entries="@array/Provinsi"
-                        tools:ignore="TouchTargetSizeCheck"></Spinner>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="serif"
-                        android:text="Kabupaten"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
-
-                    <Spinner
-                        android:id="@+id/Ckabupaten_kos"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:entries="@array/Kabupaten"
-                        tools:ignore="TouchTargetSizeCheck"></Spinner>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="serif"
-                        android:text="Kecamatan"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
-
-                    <Spinner
-                        android:id="@+id/Ckecamatan_kos"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:entries="@array/Kecamatan"
-                        tools:ignore="TouchTargetSizeCheck"></Spinner>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="serif"
-                        android:text="Status Kost"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
-
-
-                    <EditText
-                        android:id="@+id/Cstatus_kost"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="serif"
-                        android:hint="ex: kosong 1 atau penuh"
-                        android:inputType="textMultiLine"></EditText>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="serif"
-                        android:text="Luas Kamar"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
-
-
-                    <EditText
-                        android:id="@+id/Cluas_kamar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="serif"
-                        android:hint="Luas Kamar"
-                        android:inputType="textMultiLine"></EditText>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="serif"
-                        android:text="Alamat"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
-
-
-                    <EditText
-                        android:id="@+id/Calamatlengkapkos"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="serif"
-                        android:ems="50"
-                        android:hint="Alamat Lengkap"
-                        android:inputType="textMultiLine"></EditText>
-
-                </LinearLayout>
+                <Spinner
+                    android:id="@+id/Cprovinsi_kos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/Provinsi"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:fontFamily="serif"
-                    android:text="Deskripsi Kos"
+                    android:text="Kabupaten"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:textStyle="bold"></TextView>
 
-                <LinearLayout
+                <Spinner
+                    android:id="@+id/Ckabupaten_kos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:entries="@array/Kabupaten"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
 
-                    <EditText
-                        android:id="@+id/Cdeskkos"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="serif"
-                        android:ems="50"
-                        android:hint="Deskripsikan Kos"
-                        android:inputType="textMultiLine"></EditText>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Kecamatan"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
 
-                </LinearLayout>
+                <Spinner
+                    android:id="@+id/Ckecamatan_kos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/Kecamatan"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Status Kost"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+
+                <EditText
+                    android:id="@+id/Cstatus_kost"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:hint="ex: kosong 1 atau penuh"
+                    android:inputType="textMultiLine"></EditText>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Luas Kamar"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+
+                <EditText
+                    android:id="@+id/Cluas_kamar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:hint="Luas Kamar"
+                    android:inputType="textMultiLine"></EditText>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Alamat"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+
+                <EditText
+                    android:id="@+id/Calamatlengkapkos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="50"
+                    android:fontFamily="serif"
+                    android:hint="Alamat Lengkap"
+                    android:inputType="textMultiLine"></EditText>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/Fasilitas_kost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="Fasilitas"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold">
+
+            </CheckBox>
+
+            <LinearLayout
+                android:id="@+id/layout_checkbox_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!--                    <EditText-->
+                <!--                        android:id="@+id/Cdeskkos"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:ems="50"-->
+                <!--                        android:fontFamily="serif"-->
+                <!--                        android:hint="Deskripsikan Kos"-->
+                <!--                        android:inputType="textMultiLine"></EditText>-->
+
+                <CheckBox
+                    android:id="@+id/checkbox_kasur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kasur" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_bantal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bantal" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wifi" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_meja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meja" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_lemari"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lemari" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_areaparkir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area Parkir" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_ruangjemur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ruang Jemur" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_K.mandidalam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kamar Mandi Dalam" />
+                <CheckBox
+                    android:id="@+id/checkbox_K.mandiluar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kamar Mandi Luar" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/Csimpan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SIMPAN"
-                    android:background="@drawable/button_shape">
-                </androidx.appcompat.widget.AppCompatButton>
+                    android:background="@drawable/button_shape"
+                    android:text="SIMPAN"></androidx.appcompat.widget.AppCompatButton>
 
             </LinearLayout>
 

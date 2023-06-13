@@ -2,17 +2,17 @@ package com.mykostaja.kostaja;
 
 public class data_kost {
 
-    private String nama_kost, tipe_kost, provinsi, kabupaten, kecamatan, alamat, deskripsi, status, luas,gambar;
+    private String nama_kost, tipe_kost, provinsi, kabupaten, kecamatan, alamat, fasilitas, status, luas,gambar;
     private String key;
 
-    public data_kost(String nama_kost, String tipe_kost, String provinsi, String kabupaten, String kecamatan, String alamat, String deskripsi, String status, String luas,String gambar) {
+    public data_kost(String nama_kost, String tipe_kost, String provinsi, String kabupaten, String kecamatan, String alamat, String fasilitas, String status, String luas) {
         this.nama_kost = nama_kost;
         this.tipe_kost = tipe_kost;
         this.provinsi = provinsi;
         this.kabupaten = kabupaten;
         this.kecamatan = kecamatan;
         this.alamat = alamat;
-        this.deskripsi = deskripsi;
+        this.fasilitas = fasilitas;
         this.status = status;
         this.luas = luas;
         this.gambar = gambar;
@@ -66,13 +66,14 @@ public class data_kost {
         this.alamat = alamat;
     }
 
-    public String getDeskripsi() {
-        return deskripsi;
+    public String getFasilitas() {
+        return fasilitas;
     }
 
-    public void setDeskripsi(String gambar) {
-        this.deskripsi = deskripsi;
+    public void setFasilitas(String fasilitas) {
+        this.fasilitas = fasilitas;
     }
+
     public String getGambar() {
         return gambar;
     }

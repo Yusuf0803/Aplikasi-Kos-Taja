@@ -33,8 +33,17 @@
         <item>Sokaraja</item>
         <item>Pekuncen</item>
     </string-array>
-
-
-
+    <string-array name="Fasilitas">
+        <item></item>
+        <item>Kasur</item>
+        <item>Bantal</item>
+        <item>Meja</item>
+        <item>Wifi</item>
+        <item>Lemari</item>
+        <item>Area Parkir</item>
+        <item>Ruang Jemur</item>
+        <item>Kamar Mandi Dalam</item>
+        <item>Kamar Mandi Luar</item>
+    </string-array>
 
 </resources>

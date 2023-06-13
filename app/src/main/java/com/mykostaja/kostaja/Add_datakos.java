@@ -14,9 +14,12 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,12 +37,20 @@ import java.io.ByteArrayOutputStream;
 import java.util.UUID;
 
 public class Add_datakos extends AppCompatActivity {
-    private EditText nama_kost, alamat, deskripsi, status_kost, luas_kamar;
+    private EditText nama_kost, alamat, status_kost, luas_kamar;
+
+//    private EditText deskripsi;
+
+    private CheckBox fasilitas;
+    private LinearLayout layoutCheckboxList;
+
     private Button create, image;
     private ImageView image_create;
     private Spinner tipe_kost, provinsi, kabupaten, kecamatan;
 
-    private String getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan, getAlamat, getDeskripsi, getstatus_kost, getluas_kamar, getGambar;
+//    private String getDeskripsi;
+    private String getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan, getAlamat, getstatus_kost, getluas_kamar, getGambar;
+    private String getFasilitas;
 
     private static final int REQUEST_CODE_CAMERA = 1;
     private static final int REQUEST_CODE_GALLERY = 2;
@@ -59,10 +70,13 @@ public class Add_datakos extends AppCompatActivity {
         kabupaten = findViewById(R.id.Ckabupaten_kos);
         kecamatan = findViewById(R.id.Ckecamatan_kos);
         alamat = findViewById(R.id.Calamatlengkapkos);
-        deskripsi = findViewById(R.id.Cdeskkos);
+//        deskripsi = findViewById(R.id.Cdeskkos);
         create = findViewById(R.id.Csimpan);
         image = findViewById(R.id.Cphoto);
         image_create = findViewById(R.id.image_create);
+
+        fasilitas = findViewById(R.id.Fasilitas_kost);
+        layoutCheckboxList = findViewById(R.id.layout_checkbox_list);
 
         status_kost = findViewById(R.id.Cstatus_kost);
         luas_kamar = findViewById(R.id.Cluas_kamar);
@@ -72,6 +86,18 @@ public class Add_datakos extends AppCompatActivity {
 
         // Mendapatkan referensi dari database firebase
         dbF = FirebaseDatabase.getInstance().getReference();
+
+
+        fasilitas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (fasilitas.isChecked()){
+                    layoutCheckboxList.setVisibility(View.VISIBLE);
+                }else {
+                    layoutCheckboxList.setVisibility(View.GONE);
+                }
+            }
+        });
 
         create.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +110,8 @@ public class Add_datakos extends AppCompatActivity {
                 getKabupaten = kabupaten.getSelectedItem().toString();
                 getKecamatan = kecamatan.getSelectedItem().toString();
                 getAlamat = alamat.getText().toString();
-                getDeskripsi = deskripsi.getText().toString();
+//                getDeskripsi = deskripsi.getText().toString();
+                getFasilitas = fasilitas.getText().toString();
                 getstatus_kost = status_kost.getText().toString();
                 getluas_kamar = luas_kamar.getText().toString();
                 getGambar = image_create.toString().trim();
@@ -151,7 +178,8 @@ public class Add_datakos extends AppCompatActivity {
         c = TextUtils.isEmpty(getstatus_kost);
         d = TextUtils.isEmpty(getluas_kamar);
 //        f = TextUtils.isEmpty(getKecamatan);
-        g = TextUtils.isEmpty(getDeskripsi);
+//        g = TextUtils.isEmpty(getDeskripsi);
+        g = TextUtils.isEmpty(getFasilitas);
         e = TextUtils.isEmpty(getGambar);
 
         if (a || b || c || d || g || e) {
@@ -179,7 +207,7 @@ public class Add_datakos extends AppCompatActivity {
                         public void onSuccess(Uri uri) {
                             String imageUrl = uri.toString().trim();
                             String key = dbF.child("Kos").push().getKey();
-                            data_kost kos = new data_kost(getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan, getAlamat, getDeskripsi, getstatus_kost,getluas_kamar,imageUrl);
+                            data_kost kos = new data_kost(getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan, getAlamat, getstatus_kost,getluas_kamar,imageUrl);
                             kos.setKey(key);
 
                             dbF.child("Kos").child(key)
@@ -194,7 +222,8 @@ public class Add_datakos extends AppCompatActivity {
 //                                            kabupaten.setText("");
 //                                            kecamatan.setText("");
                                             alamat.setText("");
-                                            deskripsi.setText("");
+//                                            deskripsi.setText("");
+                                            fasilitas.setText("");
                                             status_kost.setText("");
                                             luas_kamar.setText("");
 
@@ -224,6 +253,7 @@ public class Add_datakos extends AppCompatActivity {
                     // Mengatur tampilan progress jika diperlukan
                 }
             });
+
         }
     }
 }
