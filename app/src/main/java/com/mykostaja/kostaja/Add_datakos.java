@@ -178,12 +178,12 @@ public class Add_datakos extends AppCompatActivity {
         b = TextUtils.isEmpty(getAlamat);
         c = TextUtils.isEmpty(getstatus_kost);
         d = TextUtils.isEmpty(getluas_kamar);
-//        f = TextUtils.isEmpty(getKecamatan);
+        f = TextUtils.isEmpty(getKecamatan);
 //        g = TextUtils.isEmpty(getDeskripsi);
         g = TextUtils.isEmpty(getFasilitas);
         e = TextUtils.isEmpty(getGambar);
 
-        if (a || b || c || d || g || e) {
+        if (a || b || c || d || g || e || f) {
             Toast.makeText(Add_datakos.this, "Masih terdapat data yang kosong!", Toast.LENGTH_SHORT).show();
         } else {
 
@@ -208,8 +208,9 @@ public class Add_datakos extends AppCompatActivity {
                         public void onSuccess(Uri uri) {
                             String imageUrl = uri.toString().trim();
                             String key = dbF.child("Kos").push().getKey();
-                            data_kost kos = new data_kost(getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan, getAlamat, getstatus_kost,getluas_kamar,imageUrl);
+                            data_kost kos = new data_kost(getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan,getstatus_kost,getluas_kamar,getAlamat,getFasilitas,imageUrl);
                             kos.setKey(key);
+
 
                             dbF.child("Kos").child(key)
                                     .setValue(kos)
