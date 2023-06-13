@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.mykostaja.kostaja.Pemilik.profil_admin;
 
 public class LupaPassword extends AppCompatActivity {
 
@@ -42,7 +43,10 @@ public class LupaPassword extends AppCompatActivity {
         panah_lupapswd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                Intent x = new Intent(LupaPassword.this, Login.class);
+                // set the new task and clear flags
+                x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(x);
             }
         });
 

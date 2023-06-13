@@ -54,7 +54,6 @@ public class Login extends AppCompatActivity {
         Daftar_user = findViewById(R.id.Daftar_user);
         Forget_user = findViewById(R.id.Forget_user);
         Btn_Login_user = findViewById(R.id.Btn_Login_user);
-        panah_user = findViewById(R.id.panah_user);
         tipeuser = findViewById(R.id.tipe_user);
         progressBar = findViewById(R.id.Progressbar_Login);
         progressBar.setVisibility(View.GONE);
@@ -81,7 +80,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-
                 if (user != null){
                     if (!user.isEmailVerified()) {
                         Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
@@ -119,17 +117,6 @@ public class Login extends AppCompatActivity {
             }
         };
 
-//        Listener = new FirebaseAuth.AuthStateListener() {
-//            @Override
-//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-//                FirebaseUser user = firebaseAuth.getCurrentUser();
-//                if (user != null && user.isEmailVerified()) {
-//                    startActivity(new Intent(Login.this, MainActivity_Admin.class));
-//
-//                }
-//            }
-//        };
-
         Daftar_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,12 +124,6 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        panah_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
 
         Forget_user.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,9 +133,9 @@ public class Login extends AppCompatActivity {
         });
 
         Btn_Login_user.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 //mendapatkan data user
                 getHp = Nohp_user.getText().toString();
                 getPassword = Password_user.getText().toString();
@@ -168,6 +149,7 @@ public class Login extends AppCompatActivity {
 
                 //check email+pass = null?
                 if (a || b) {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(Login.this, "Email or Password can't be Empty !", Toast.LENGTH_LONG).show();
                 } else {
                     if (getUsertype.equals("Pencari Kost")) {
@@ -215,6 +197,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
                     if (task.getResult().exists()) {
                         DataSnapshot dataSnapshot = task.getResult();
                         emailFromDb = String.valueOf(dataSnapshot.child("email").getValue());

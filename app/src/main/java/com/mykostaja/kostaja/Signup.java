@@ -22,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mykostaja.kostaja.Pemilik.profil_admin;
 
 
 public class Signup extends AppCompatActivity {
@@ -58,8 +59,11 @@ public class Signup extends AppCompatActivity {
         //fungsi button
         panah_signup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                onBackPressed();
+            public void onClick(View view){
+                Intent x = new Intent(Signup.this, Login.class);
+                // set the new task and clear flags
+                x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(x);
             }
         });
         Masuk_Signup.setOnClickListener(new View.OnClickListener() {
