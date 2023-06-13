@@ -238,6 +238,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
                     if (task.getResult().exists()) {
                         DataSnapshot dataSnapshot = task.getResult();
                         emailFromDb = String.valueOf(dataSnapshot.child("email").getValue());
