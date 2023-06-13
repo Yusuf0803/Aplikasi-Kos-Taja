@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:aandroid="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ScrollView
@@ -45,7 +46,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Butuh Bantuan?"
-                    android:textColor="@color/black"
                     android:fontFamily="serif"
                     android:textSize="20dp"
                     android:textStyle="bold">
@@ -58,7 +58,6 @@
                     android:layout_height="wrap_content"
                     android:text="Hubungi kami di sini"
                     android:textSize="12dp"
-                    android:textColor="@color/black"
                     android:fontFamily="serif"
                     android:layout_marginTop="15dp">
 
@@ -73,9 +72,9 @@
                     android:background="@drawable/background_tview"
                     android:drawableLeft="@drawable/whatsapp"
                     android:paddingLeft="20dp"
-                    android:paddingRight="225dp"
+                    android:gravity="start|center_vertical"
+                    android:drawablePadding="10dp"
                     android:text="WhatsApp"
-                    android:gravity="center"
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
@@ -89,9 +88,9 @@
                     android:background="@drawable/background_tview"
                     android:drawableLeft="@drawable/bantuan"
                     android:paddingLeft="20dp"
-                    android:paddingRight="200dp"
+                    android:gravity="start|center_vertical"
+                    android:drawablePadding="10dp"
                     android:text="Pusat Bantuan"
-                    android:gravity="center"
                     android:textColor="@color/black"
                     android:fontFamily="serif">
                 </TextView>
