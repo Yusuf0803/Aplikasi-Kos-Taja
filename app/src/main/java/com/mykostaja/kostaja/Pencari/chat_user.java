@@ -1,8 +1,10 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.Pencari;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.mykostaja.kostaja.R;
 
 public class chat_user extends AppCompatActivity {
     @Override

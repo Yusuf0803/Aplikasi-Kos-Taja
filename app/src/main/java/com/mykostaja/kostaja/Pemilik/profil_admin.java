@@ -1,4 +1,4 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.Pemilik;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.mykostaja.kostaja.Login;
+import com.mykostaja.kostaja.R;
 
 public class profil_admin extends AppCompatActivity {
 
@@ -72,7 +74,7 @@ public class profil_admin extends AppCompatActivity {
             public void onClick(View view) {
 
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(profil_admin.this,Login.class);
+                Intent intent = new Intent(profil_admin.this, Login.class);
                 profil_admin.this.startActivity(intent);
                 Toast.makeText(profil_admin.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
                 finish();
