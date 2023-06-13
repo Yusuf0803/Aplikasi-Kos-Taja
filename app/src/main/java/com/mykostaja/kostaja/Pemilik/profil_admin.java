@@ -74,12 +74,11 @@ public class profil_admin extends AppCompatActivity {
             public void onClick(View view) {
 
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(profil_admin.this, Login.class);
-                profil_admin.this.startActivity(intent);
-                Toast.makeText(profil_admin.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
-                finish();
+                Intent x = new Intent(profil_admin.this, Login.class);
+                // set the new task and clear flags
+                x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(x);
             }
         });
-        return;
     }
 }

@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.mykostaja.kostaja.Login;
+import com.mykostaja.kostaja.Pemilik.profil_admin;
 import com.mykostaja.kostaja.R;
 import com.mykostaja.kostaja.edit_profil;
 
@@ -75,12 +76,11 @@ public class profil_user extends AppCompatActivity {
         keluar_profil_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(profil_user.this, Login.class);
-                profil_user.this.startActivity(intent);
-                Toast.makeText(profil_user.this, "Berhasil Keluar", Toast.LENGTH_SHORT).show();
-                finish();
+                Intent x = new Intent(profil_user.this, Login.class);
+                // set the new task and clear flags
+                x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(x);
             }
         });
     }
