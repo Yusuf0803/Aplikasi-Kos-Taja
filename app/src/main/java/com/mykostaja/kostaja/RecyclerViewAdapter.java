@@ -2,6 +2,7 @@ package com.mykostaja.kostaja;
 
 import static android.text.TextUtils.isEmpty;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -9,6 +10,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -20,12 +22,44 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> implements Filterable {
 
-    ArrayList <data_kost> listdatakost;
+    ArrayList <data_kost> listdatakost,listkostsearch;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
+    //Filter Data berdasarkan nama
+    Filter setSearch = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<data_kost> filterKost = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0){
+                filterKost.addAll(listkostsearch);
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (data_kost item : listkostsearch){
+                    if (item.getNama_kost().toLowerCase().contains(filterPattern)){
+                        filterKost.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filterKost;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults results) {
+
+            listdatakost.clear();
+            listdatakost.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
+
+    //konstruktor utk menyimpan data
     public  RecyclerViewAdapter(ArrayList<data_kost> listdatakost){
         this.listdatakost = listdatakost;
     }
@@ -38,8 +72,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.detail_kos, parent, false);
+        return new ViewHolder(v);
     }
+
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
 
@@ -73,8 +109,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     .load(gambar.trim())
                     .into(holder.gambar_detail);
         }
-
     }
+
+//    holder.sv_detail_kost.set
 
 
 
@@ -90,6 +127,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private TextView nama_kost_detail, tipe_kost_detail, provinsi_detail, kabupaten_detail, kecamatan_detail, status_detail, luas_detail, alamat_detail, fasilitas_detail;
         private ImageView gambar_detail;
 
+        private ScrollView sv_detail_kost;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -104,6 +143,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             alamat_detail = itemView.findViewById(R.id.alamat_detail);
             fasilitas_detail = itemView.findViewById(R.id.fasilitas_detail);
             gambar_detail = itemView.findViewById(R.id.gambar_detail);
+            sv_detail_kost = itemView.findViewById(R.id.sv_detail_kost);
 
 
         }
