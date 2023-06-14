@@ -2,24 +2,35 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp">
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chat"
-            android:textColor="@color/black"
-            android:fontFamily="serif"
-            android:textSize="20dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp">
-
+            android:text="Fitur dalam tahap pengembangan"
+            android:layout_gravity="center"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:textSize="20sp">
         </TextView>
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/development_computer"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            app:lottie_loop="true">
+
+        </com.airbnb.lottie.LottieAnimationView>
 
     </LinearLayout>
-
 </RelativeLayout>
