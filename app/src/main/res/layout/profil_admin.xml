@@ -19,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
+                android:foregroundGravity="center"
                 android:background="@drawable/button_shape_top">
 
 
@@ -30,21 +31,25 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp">
 
-                    <ImageView
-                        android:id="@+id/gambar_profil_admin"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/kostaja">
-
-                    </ImageView>
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/gambar_profil_admin"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/kostaja">
+                        </ImageView>
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="start|center_vertical"
+                    android:layout_gravity="center">
                     <TextView
                         android:id="@+id/nama_admin"
                         android:layout_width="wrap_content"
@@ -68,8 +73,7 @@
                         android:textColor="@color/black"
                         android:fontFamily="serif">
                     </TextView>
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
