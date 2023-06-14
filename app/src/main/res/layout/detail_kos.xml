@@ -1,334 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_detail_kost"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/gambar_detail"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:contentDescription="TODO"
-        android:src="@drawable/orang">
-    </ImageView>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/gambar_detail"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:contentDescription="TODO"
+            android:src="@drawable/orang">
+        </ImageView>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/t1"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="4dp"
-                android:text="Nama Kost"
-                android:textColor="@color/black"
-                android:fontFamily="serif"
-                android:textStyle="bold">
-            </TextView>
-
-            <TextView
-                android:id="@+id/nama_kost_detail"
-                android:layout_below="@+id/t1"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="20dp"
-                android:text="Nama Kost"
-                android:textSize="12dp"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t1"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Nama Kost"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/nama_kost_detail"
+                    android:layout_below="@+id/t1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Nama Kost"
+                    android:textSize="12dp"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t2"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Tipe Kost"
-                android:textColor="@color/black"
-                android:fontFamily="serif"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tipe_kost_detail"
-                android:layout_below="@+id/t2"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Tipe Kost"
-                android:textSize="12dp"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t2"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Tipe Kost"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tipe_kost_detail"
+                    android:layout_below="@+id/t2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Tipe Kost"
+                    android:textSize="12dp"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t3"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Provinsi"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/provinsi_detail"
-                android:layout_below="@+id/t3"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Provinsi"
-                android:fontFamily="serif"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t3"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Provinsi"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/provinsi_detail"
+                    android:layout_below="@+id/t3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Provinsi"
+                    android:fontFamily="serif"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t4"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Kabupaten"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/kabupaten_detail"
-                android:layout_below="@+id/t4"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Kabupaten"
-                android:fontFamily="serif"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t4"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Kabupaten"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/kabupaten_detail"
+                    android:layout_below="@+id/t4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Kabupaten"
+                    android:fontFamily="serif"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t5"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Kecamatan"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/kecamatan_detail"
-                android:layout_below="@+id/t5"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Kecamatan"
-                android:fontFamily="serif"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t5"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Kecamatan"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/kecamatan_detail"
+                    android:layout_below="@+id/t5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Kecamatan"
+                    android:fontFamily="serif"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t6"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Status Kost"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/status_detail"
-                android:layout_below="@+id/t6"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Status Kost"
-                android:fontFamily="serif"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t6"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Status Kost"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/status_detail"
+                    android:layout_below="@+id/t6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Status Kost"
+                    android:fontFamily="serif"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t7"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Luas"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/luas_detail"
-                android:layout_below="@+id/t7"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Luas"
-                android:fontFamily="serif"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t7"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Luas"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/luas_detail"
+                    android:layout_below="@+id/t7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Luas"
+                    android:fontFamily="serif"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t8"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Alamat"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/alamat_detail"
-                android:layout_below="@+id/t8"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Alamat"
-                android:fontFamily="serif"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t8"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Alamat"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/alamat_detail"
+                    android:layout_below="@+id/t8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Alamat"
+                    android:fontFamily="serif"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
 
-            <TextView
-                android:id="@+id/t9"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:text="Fasilitas"
-                android:fontFamily="serif"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+            </RelativeLayout>
 
-
-            <TextView
-                android:id="@+id/fasilitas_detail"
-                android:layout_below="@+id/t9"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:text="Fasilitas"
-                android:fontFamily="serif"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:textStyle="bold">
-            </TextView>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/t9"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Fasilitas"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
+
+
+                <TextView
+                    android:id="@+id/fasilitas_detail"
+                    android:layout_below="@+id/t9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Fasilitas"
+                    android:fontFamily="serif"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+                </TextView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>

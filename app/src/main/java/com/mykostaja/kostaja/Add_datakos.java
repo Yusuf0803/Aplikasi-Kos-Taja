@@ -211,7 +211,6 @@ public class Add_datakos extends AppCompatActivity {
                             data_kost kos = new data_kost(getNama_kost, getTipe_kost, getProvinsi, getKabupaten, getKecamatan,getstatus_kost,getluas_kamar,getAlamat,getFasilitas,imageUrl);
                             kos.setKey(key);
 
-
                             dbF.child("Kos").child(key)
                                     .setValue(kos)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
