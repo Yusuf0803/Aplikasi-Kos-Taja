@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:elevation="5dp">
 
     <RelativeLayout
+        android:id="@+id/layout_cardlist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <ImageView
             android:id="@+id/iv_card"
@@ -18,11 +20,26 @@
         </ImageView>
 
         <TextView
-            android:id="@+id/tv_nama_kost"
+            android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/iv_card"
             android:layout_marginLeft="5dp"
+            android:text="Nama Kost :"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="serif">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_nama_kost"
+            android:layout_below="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_card"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:text="Nama Kost"
             android:textSize="15dp"
             android:textColor="@color/black"
@@ -31,12 +48,29 @@
         </TextView>
 
         <TextView
-            android:id="@+id/tv_alamat_kost"
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tv_nama_kost"
+            android:layout_toRightOf="@id/iv_card"
+            android:layout_marginLeft="5dp"
+            android:text="Alamat :"
+            android:textColor="@color/black"
+            android:fontFamily="serif"
+            android:textSize="15dp"
+            android:maxLines="4"
+            android:ellipsize="end">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_alamat_kost"
+            android:layout_below="@id/tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/iv_card"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:text="Alamat"
             android:textColor="@color/black"
             android:fontFamily="serif"

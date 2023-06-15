@@ -5,18 +5,25 @@ public class data_kost {
     private String nama_kost, tipe_kost, provinsi, kabupaten, kecamatan, alamat, fasilitas, status, luas,gambar;
     private String key;
 
-    public data_kost(String nama_kost, String tipe_kost, String provinsi, String kabupaten, String kecamatan, String alamat, String fasilitas, String status, String luas, String imageUrl) {
+    public data_kost() {
+
+    }
+
+
+    public data_kost(String nama_kost, String tipe_kost, String provinsi,
+                     String kabupaten, String kecamatan, String alamat, String fasilitas, String status, String luas, String gambar) {
         this.nama_kost = nama_kost;
         this.tipe_kost = tipe_kost;
         this.provinsi = provinsi;
         this.kabupaten = kabupaten;
         this.kecamatan = kecamatan;
-        this.status = status;
-        this.luas = luas;
         this.alamat = alamat;
         this.fasilitas = fasilitas;
-        this.gambar = imageUrl;
+        this.status = status;
+        this.luas = luas;
+        this.gambar = gambar;
     }
+
     public String getNama_kost() {
         return nama_kost;
     }
