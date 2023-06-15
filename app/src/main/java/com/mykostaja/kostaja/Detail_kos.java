@@ -37,6 +37,7 @@ public class Detail_kos extends AppCompatActivity {
         status_detail = findViewById(R.id.status_detail);
         luas_detail = findViewById(R.id.luas_detail);
         alamat_detail = findViewById(R.id.alamat_detail);
+        gambar_detail = findViewById(R.id.gambar_detail);
         fasilitas_detail = findViewById(R.id.fasilitas_detail);
 
         GetSetKost();
@@ -56,7 +57,8 @@ public class Detail_kos extends AppCompatActivity {
         getFasilitas = getIntent().getStringExtra("fasilitas");
         getGambar = getIntent().getStringExtra("gambar");
 
-//        Glide.with(Detail_kos.this).load(getGambar.trim()).into(gambar_detail);
+        //dtt
+        Glide.with(Detail_kos.this).load(getGambar.trim()).into(gambar_detail);
         nama_kost_detail.setText(getNama_kost);
         tipe_kost_detail.setText(getTipe_kost);
         provinsi_detail.setText(getProvinsi);
