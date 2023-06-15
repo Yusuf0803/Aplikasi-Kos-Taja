@@ -35,12 +35,10 @@ import java.util.List;
 public class MainActivity_User extends AppCompatActivity {
 
     BottomNavigationView nav_bottom;
-
     RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<data_kost> datakost;
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -72,7 +70,6 @@ public class MainActivity_User extends AppCompatActivity {
 
             }
         });
-
         nav_bottom.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -101,7 +98,5 @@ public class MainActivity_User extends AppCompatActivity {
                 return MainActivity_User.super.onOptionsItemSelected(item);
             }
         });
-
     }
-
 }
