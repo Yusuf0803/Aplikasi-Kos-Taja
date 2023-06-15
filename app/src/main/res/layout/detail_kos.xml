@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sv_detail_kost"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -400,7 +404,80 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_centerHorizontal="true"/>
+
+
+            <TextView
+                android:id="@+id/tv_biaya"
+                android:layout_marginLeft="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp.1.000.000/bulan"
+                android:textColor="@color/black"
+                android:fontFamily="serif">
+
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_kirim_pesan"
+                android:layout_below="@id/tv_biaya"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_shape"
+                android:text="Kirim Pesan"
+                android:drawableLeft="@drawable/pesan"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
+                android:textColorHint="@color/white">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <TextView
+                android:id="@+id/tv_etimasipembayaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:text="Etimasi Pembayaran"
+                android:textColor="@color/black"
+                android:fontFamily="serif">
+
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_below="@+id/tv_etimasipembayaran"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="Ajukan Sewa"
+                android:background="@drawable/border_shape">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </RelativeLayout>
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</RelativeLayout>
