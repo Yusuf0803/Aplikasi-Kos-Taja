@@ -101,24 +101,8 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/riwayat_profil_user"
-                    android:layout_below="@id/akun_profil_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/background_tview"
-                    android:drawableLeft="@drawable/riwayat_transaksi"
-                    android:drawablePadding="10dp"
-                    android:paddingLeft="20dp"
-                    android:gravity="start|center_vertical"
-                    android:text="Riwayat Transaksi"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif">
-                </TextView>
-
-                <TextView
                     android:id="@+id/bantuan_profil_user"
-                    android:layout_below="@id/riwayat_profil_user"
+                    android:layout_below="@id/akun_profil_user"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"

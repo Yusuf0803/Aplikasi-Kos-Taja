@@ -100,39 +100,8 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/pengaturan_profil_admin"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_below="@id/akun_profil_admin"
-                    android:background="@drawable/background_tview"
-                    android:drawableLeft="@drawable/pengaturan1"
-                    android:layout_marginTop="20dp"
-                    android:text="Pengaturan"
-                    android:drawablePadding="10dp"
-                    android:paddingLeft="20dp"
-                    android:gravity="start|center_vertical"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif">
-                </TextView>
-
-                <TextView
-                    android:id="@+id/riwayat_profil_admin"
-                    android:layout_below="@id/pengaturan_profil_admin"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/background_tview"
-                    android:drawableLeft="@drawable/riwayat_transaksi"
-                    android:drawablePadding="10dp"
-                    android:paddingLeft="20dp"
-                    android:gravity="start|center_vertical"
-                    android:text="Riwayat Transaksi"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif">
-                </TextView>
-                <TextView
                     android:id="@+id/bantuan_profil_admin"
-                    android:layout_below="@id/riwayat_profil_admin"
+                    android:layout_below="@id/akun_profil_admin"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"

@@ -39,7 +39,7 @@ public class profil_user extends AppCompatActivity {
 
     String getPhone,getUserame;
     private TextView nama_profil_user,info_profil_user,nohp_user;
-    private TextView riwayat_profil_user,bantuan_profil_user,keluar_profil_user;
+    private TextView bantuan_profil_user,keluar_profil_user;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -52,8 +52,6 @@ public class profil_user extends AppCompatActivity {
         nama_profil_user = findViewById(R.id.nama_profil_user);
         info_profil_user = findViewById(R.id.akun_profil_user);
         nohp_user = findViewById(R.id.nohp_user);
-
-        riwayat_profil_user = findViewById(R.id.riwayat_profil_user);
         bantuan_profil_user = findViewById(R.id.bantuan_profil_user);
         keluar_profil_user = findViewById(R.id.keluar_profil_user);
         
@@ -89,15 +87,6 @@ public class profil_user extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(profil_user.this, edit_profil.class);
                 startActivity(intent);
-            }
-        });
-
-
-        riwayat_profil_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(profil_user.this, "Belum di konfigurasi", Toast.LENGTH_SHORT).show();
-                return;
             }
         });
 

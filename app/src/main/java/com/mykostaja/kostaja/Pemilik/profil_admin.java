@@ -23,7 +23,7 @@ public class profil_admin extends AppCompatActivity {
 
     private TextView nama_admin, nohp_admin;
 
-    private TextView akun_profil_admin, pengaturan_profil_admin,riwayat_profil_admin, bantuan_profil_admin, keluar_profil_admin;
+    private TextView akun_profil_admin, bantuan_profil_admin, keluar_profil_admin;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,26 +39,10 @@ public class profil_admin extends AppCompatActivity {
         nohp_admin = findViewById(R.id.nohp_admin);
 
         akun_profil_admin = findViewById(R.id.akun_profil_admin);
-        pengaturan_profil_admin = findViewById(R.id.pengaturan_profil_admin);
-        riwayat_profil_admin = findViewById(R.id.riwayat_profil_admin);
         bantuan_profil_admin = findViewById(R.id.bantuan_profil_admin);
         keluar_profil_admin = findViewById(R.id.keluar_profil_admin);
 
         akun_profil_admin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(profil_admin.this, "belum dikonfigurasi", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        pengaturan_profil_admin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(profil_admin.this, "belum dikonfigurasi", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        riwayat_profil_admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(profil_admin.this, "belum dikonfigurasi", Toast.LENGTH_SHORT).show();
