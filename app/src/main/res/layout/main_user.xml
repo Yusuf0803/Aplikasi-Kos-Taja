@@ -49,16 +49,18 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp">
 
-                <SearchView
+                <EditText
                     android:id="@+id/cari_main_user"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:iconifiedByDefault="false"
-                    android:queryHint="Cari Kos Terdekat.."
-                    android:searchIcon="@drawable/cari"
+                    android:hint="Cari Kost.."
+                    android:drawableLeft="@drawable/cari"
+                    android:padding="10dp"
+                    android:drawablePadding="10dp"
                     android:inputType="textPersonName"
-                    android:background="@drawable/background_ed">
-                </SearchView>
+                    android:background="@drawable/border_shape">
+                </EditText>
 
             </LinearLayout>
 
