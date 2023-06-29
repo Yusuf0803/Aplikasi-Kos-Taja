@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/sv_detail_kost"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Pemilik.view_data_kost"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@color/primary_300">
@@ -12,22 +13,24 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:id="@+id/layout_detail_kost"
+            android:id="@+id/layout_view_kost"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/gambar_detail"
+                android:id="@+id/gambar_view"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="350dp"
                 android:layout_gravity="center"
-                android:contentDescription="TODO"
                 android:scaleType="fitXY"
-                android:src="@drawable/image"></ImageView>
+                android:contentDescription="TODO"
+                android:src="@drawable/image">
+
+            </ImageView>
 
             <LinearLayout
-                android:layout_below="@+id/gambar_detail"
+                android:layout_below="@+id/gambar_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -52,7 +55,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/nama_kost_detail"
+                        android:id="@+id/nama_kost_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t1"
@@ -91,7 +94,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/tipe_kost_detail"
+                        android:id="@+id/tipe_kost_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t2"
@@ -130,7 +133,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/provinsi_detail"
+                        android:id="@+id/provinsi_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t3"
@@ -169,7 +172,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/kabupaten_detail"
+                        android:id="@+id/kabupaten_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t4"
@@ -208,7 +211,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/kecamatan_detail"
+                        android:id="@+id/kecamatan_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t5"
@@ -247,7 +250,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/status_detail"
+                        android:id="@+id/status_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t6"
@@ -286,7 +289,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/luas_detail"
+                        android:id="@+id/luas_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t7"
@@ -325,7 +328,7 @@
                         android:textStyle="bold"></TextView>
 
                     <TextView
-                        android:id="@+id/alamat_detail"
+                        android:id="@+id/alamat_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t8"
@@ -365,7 +368,7 @@
 
 
                     <TextView
-                        android:id="@+id/fasilitas_detail"
+                        android:id="@+id/fasilitas_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t9"
@@ -405,7 +408,7 @@
 
 
                     <TextView
-                        android:id="@+id/harga_detail"
+                        android:id="@+id/harga_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t10"
@@ -445,7 +448,7 @@
 
 
                     <TextView
-                        android:id="@+id/nohp_detail"
+                        android:id="@+id/nohp_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/t11"
@@ -467,12 +470,15 @@
                 </RelativeLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_ajukan_sewa"
+                    android:id="@+id/btn_update_view"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:background="@drawable/border_shape"
-                    android:text="Ajukan Sewa"
-                    android:layout_marginTop="10dp">
+                    android:text="Update Data"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:foregroundGravity="center">
 
                 </androidx.appcompat.widget.AppCompatButton>
 

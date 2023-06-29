@@ -1,10 +1,10 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.DataUser;
 
-public class User {
+public class DataUser {
     public String usertype, username, phone, email, password, repassword;
     private String key;
 
-    public User(String usertype, String username, String phone, String email, String password, String repassword) {
+    public DataUser(String usertype, String username, String phone, String email, String password, String repassword) {
         this.usertype = usertype;
         this.username = username;
         this.phone = phone;

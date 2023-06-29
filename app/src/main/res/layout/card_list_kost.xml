@@ -2,22 +2,26 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="5dp">
+    android:elevation="5dp"
+    android:layout_margin="4dp"
+    android:background="@drawable/border_shape">
 
     <RelativeLayout
         android:id="@+id/layout_cardlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/border_shape">
+        android:layout_margin="5dp">
 
         <ImageView
             android:id="@+id/iv_card"
             android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_margin="5dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/border_shape1"
-            android:scaleType="centerCrop">
+            android:scaleType="fitXY">
 
         </ImageView>
 
@@ -27,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/iv_card"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
             android:text="Nama Kost :"
             android:textSize="15dp"
             android:textColor="@color/black"
@@ -109,8 +114,6 @@
 
         </TextView>
 
-
-
         <TextView
             android:id="@+id/tv4"
             android:layout_width="wrap_content"
@@ -145,20 +148,71 @@
         </TextView>
 
         <TextView
-            android:id="@+id/tv_lihat_kost"
+            android:id="@+id/tv5"
             android:layout_below="@id/tv_alamat_kost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_card"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Nomor Handphone :"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="serif">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_nohp"
+            android:layout_below="@id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_card"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Nomor Handphone"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="serif">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/tv_lihat"
+            android:layout_below="@id/tv_nohp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/iv_card"
             android:text="lihat kost ini"
             android:textColor="@color/black"
+            android:drawableRight="@drawable/panah_kanan"
+            android:drawablePadding="25dp"
             android:textSize="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="35dp"
             android:layout_marginLeft="5dp"
             android:fontFamily="serif">
 
         </TextView>
+        <LinearLayout
+            android:layout_below="@id/tv_lihat"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="Hapus"
+                android:id="@+id/bt_hapus_kos"
+                android:clickable="true"
+                android:layout_marginHorizontal="20sp"
+                android:layout_marginVertical="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_shape">
+            </androidx.appcompat.widget.AppCompatButton>
+        </LinearLayout>
+
 
     </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>

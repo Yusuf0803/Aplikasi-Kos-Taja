@@ -1,32 +1,69 @@
 package com.mykostaja.kostaja.Pemilik;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.mykostaja.kostaja.Add_datakos;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.mykostaja.kostaja.AddDataKost.Add_datakos1;
+import com.mykostaja.kostaja.DataUser.DataUser;
 import com.mykostaja.kostaja.Pencari.bantuan_user;
 import com.mykostaja.kostaja.R;
 
+import java.util.ArrayList;
+
 public class MainActivity_Admin extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    TextView add, bantuan_main_admin;
 
+    ImageView iv_gambar_admin;
+    TextView tv_nama_admin;
+    TextView add,viewdata; //button
+    TextView nama_main_admin;
+
+    FirebaseAuth Auth;
+    FirebaseUser User;
+    String IdUser;
+    String getNoHp;
+    String emailFromDb, userFromDb, phoneFromDb,passwordFromDb;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_admin);
+
+        getNoHp = getIntent().getStringExtra("noHpAdmin");
+        nama_main_admin = findViewById(R.id.nama_main_admin);
+
         bottomNavigationView = findViewById(R.id.nav_bottom);
+
+        iv_gambar_admin = findViewById(R.id.gambar_main_admin);
+        tv_nama_admin = findViewById(R.id.nama_main_admin);
+
+        Auth = FirebaseAuth.getInstance();
+        User = Auth.getCurrentUser();
+        IdUser = User.getUid();
+
         add = findViewById(R.id.Add);
-        bantuan_main_admin = findViewById(R.id.bantuan_main_admin);
+        viewdata= findViewById(R.id.view_data_kost);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -51,19 +88,69 @@ public class MainActivity_Admin extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent x = new Intent(MainActivity_Admin.this, Add_datakos.class);
+                Intent x = new Intent(MainActivity_Admin.this, Add_datakos1.class);
                 startActivity(x);
 
             }
         });
 
-        bantuan_main_admin.setOnClickListener(new View.OnClickListener() {
+        viewdata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity_Admin.this, bantuan_user.class);
+                Intent i = new Intent(MainActivity_Admin.this, view_list_kost.class);
                 startActivity(i);
-
             }
         });
+    }
+
+    private void getUser(){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User").child("Pemilik");
+        databaseReference.child(getNoHp).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    if (task.getResult().exists()) {
+                        DataSnapshot dataSnapshot = task.getResult();
+                        emailFromDb = String.valueOf(dataSnapshot.child("email").getValue());
+                        phoneFromDb = getNoHp;
+                        userFromDb = String.valueOf(dataSnapshot.child("username").getValue());
+                        passwordFromDb = String.valueOf(dataSnapshot.child("password").getValue());
+                        nama_main_admin.setText(userFromDb);
+                        addAuthUser();
+                    } else {
+
+                    }
+                }
+            }
+        });
+    }
+    private void addAuthUser(){
+        DataUser user = new DataUser("",userFromDb,phoneFromDb,emailFromDb,passwordFromDb,"");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User").child("AuthPemilik");
+        databaseReference.child(IdUser).setValue(user);
+    }
+    private void cekUser(){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User").child("AuthPemilik");
+        databaseReference.child(IdUser).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    if (task.getResult().exists()) {
+                        // jika data ditemukan
+                        DataSnapshot dataSnapshot = task.getResult();
+                        String username = String.valueOf(dataSnapshot.child("username").getValue());
+                        nama_main_admin.setText(username);
+                    } else {
+                        getUser();
+                    }
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        cekUser();
     }
 }

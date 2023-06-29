@@ -22,7 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mykostaja.kostaja.Pemilik.profil_admin;
+import com.mykostaja.kostaja.DataUser.DataUser;
 
 
 public class Signup extends AppCompatActivity {
@@ -123,7 +123,7 @@ public class Signup extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull final Task<AuthResult> task) {
-                User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
+                DataUser user = new DataUser(getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
                 FirebaseDatabase.getInstance().getReference("User").child("Pencari").child(getPhone).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -173,7 +173,7 @@ public class Signup extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(getEmail,getPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull final Task<AuthResult> task) {
-                User user = new User (getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
+                DataUser user = new DataUser(getUsertype,getUsername,getPhone,getEmail,getPassword,getRepassword);
                 FirebaseDatabase.getInstance().getReference("User").child("Pemilik").child(getPhone).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

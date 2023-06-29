@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/primary_300"
+    android:id="@+id/layout_main_admin">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +25,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/gambar_main_admin1"
+                    android:id="@+id/CardView_Admin"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     app:cardCornerRadius="30dp"
@@ -41,28 +43,38 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/nama_main_admin"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Nama Anda"
-                    android:fontFamily="serif"
-                    android:textColor="@color/black"
-                    android:textSize="20dp">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/notif_main_admin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="140dp"
-                    android:background="@drawable/alarm"
+                    android:orientation="vertical"
+                    android:gravity="start|center_vertical"
                     android:layout_gravity="center">
 
-                </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hallo !!"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:fontFamily="serif">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/nama_main_admin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Nama Anda"
+                        android:fontFamily="serif"
+                        android:textColor="@color/black"
+                        android:textSize="25dp">
+
+                    </TextView>
+
+                </LinearLayout>
+
+
 
             </LinearLayout>
 
@@ -74,11 +86,11 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:foregroundGravity="center">
+
                 <LinearLayout
+                    android:id="@+id/LAYOUTADD"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/header1"
-                    android:id="@+id/LAYOUTADD">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/Add"
@@ -91,28 +103,30 @@
                         android:gravity="start|center_vertical"
                         android:textColor="@color/black"
                         android:fontFamily="serif"
-                        android:drawablePadding="10dp">
+                        android:drawablePadding="15dp">
                     </TextView>
 
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/LAYOUTVIEW"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/LAYOUTADD">
+
                     <TextView
-                        android:id="@+id/bantuan_main_admin"
-                        android:layout_below="@id/Add"
+                        android:id="@+id/view_data_kost"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:layout_marginTop="20dp"
                         android:background="@drawable/background_tview"
-                        android:drawableLeft="@drawable/bantuan"
-                        android:text="Bantuan"
+                        android:drawableLeft="@drawable/view_list"
+                        android:text="Lihat Data Kost"
                         android:paddingLeft="20dp"
-                        android:drawablePadding="10dp"
+                        android:layout_marginTop="20dp"
                         android:gravity="start|center_vertical"
                         android:textColor="@color/black"
-                        android:fontFamily="serif">
+                        android:fontFamily="serif"
+                        android:drawablePadding="10dp">
                     </TextView>
 
                 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.AddDataKost;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +19,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +32,8 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.mykostaja.kostaja.Pemilik.MainActivity_Admin;
+import com.mykostaja.kostaja.R;
+import com.mykostaja.kostaja.DataKost.data_kost;
 
 import java.io.ByteArrayOutputStream;
 import java.util.UUID;
@@ -224,7 +225,7 @@ public class Add_datakos extends AppCompatActivity {
 //                                            kecamatan.setText("");
                                             alamat.setText("");
 //                                            deskripsi.setText("");
-                                            fasilitas.setText("");
+//                                            fasilitas.setText("");
                                             status_kost.setText("");
                                             luas_kamar.setText("");
 

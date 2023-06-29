@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="biru">#194BCA</color>
     <color name="abu">#D6D3D3</color>
+    <color name="primary_300">#F0F5F9</color>
 </resources>

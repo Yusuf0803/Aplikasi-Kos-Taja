@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pencari.MainActivity_User">
+    tools:context=".Pencari.MainActivity_User"
+    android:background="@color/primary_300">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,15 +37,6 @@
 
                 </ImageView>
 
-                <TextView
-                    android:id="@+id/notif_main_user"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="200dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/alarm">
-
-                </TextView>
 
             </LinearLayout>
 
@@ -69,7 +62,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/rekomen_layout"
                 android:layout_below="@+id/Cari_layout"
                 android:layout_width="match_parent"
@@ -86,14 +79,15 @@
 
                 </TextView>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_main_user"
                 android:layout_below="@id/rekomen_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp">
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -109,7 +103,9 @@
         android:background="@drawable/shape_bottom"
         app:menu="@menu/menu_bottom_nav"
         app:itemTextColor="@color/white"
-        app:itemIconTint="@color/white">
+        app:itemIconTint="@color/white"
+        android:layout_toStartOf="@id/recyclerview_main_user"
+        tools:ignore="NotSibling">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>

@@ -13,14 +13,26 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".Add_datakos"
+            android:name=".AddDataKost.Add_datakos"
             android:exported="false" />
         <activity
-            android:name=".Detail_kos"
+            android:name=".AddDataKost.Add_datakos1"
+            android:exported="false" />
+        <activity
+            android:name=".Pemilik.update_datakost"
+            android:exported="false" />
+        <activity
+            android:name=".Pencari.Detail_kos"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".Pemilik.chat_admin"
+            android:exported="false" />
+        <activity
+            android:name=".Pemilik.view_data_kost"
+            android:exported="false" />
+        <activity
+            android:name=".Pemilik.view_list_kost"
             android:exported="false" />
         <activity
             android:name=".Pencari.chat_user"
@@ -35,7 +47,13 @@
             android:name=".Pencari.bantuan_user"
             android:exported="true" />
         <activity
-            android:name=".edit_profil"
+            android:name=".Pemilik.bantuan_admin"
+            android:exported="true" />
+        <activity
+            android:name=".Pencari.edit_profil_user"
+            android:exported="true" />
+        <activity
+            android:name=".Pemilik.edit_profil_admin"
             android:exported="true" />
         <activity
             android:name=".Signup"

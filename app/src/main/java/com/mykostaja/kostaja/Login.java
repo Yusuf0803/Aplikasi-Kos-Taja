@@ -84,7 +84,10 @@ public class Login extends AppCompatActivity {
                     if (!user.isEmailVerified()) {
                         Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
                     } else {
-                        startActivity(new Intent(Login.this, MainActivity_User.class));
+                        Intent i = new Intent(Login.this, MainActivity_User.class);
+                        i.putExtra("noHp",Nohp_user.getText().toString());
+
+                        startActivity(i);
                         Toast.makeText(Login.this, "Login Sebagai Pencari", Toast.LENGTH_SHORT).show();
                         finish();
                     }
@@ -109,8 +112,9 @@ public class Login extends AppCompatActivity {
                     if (!user.isEmailVerified()) {
                         Toast.makeText(Login.this, "Email Belum Diverifikasi", Toast.LENGTH_SHORT).show();
                     } else {
-                        startActivity(new Intent(Login.this, MainActivity_Admin.class));
-                        Toast.makeText(Login.this, "Login Sebagai Pemilik", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(Login.this, MainActivity_Admin.class);
+                        i.putExtra("noHpAdmin",Nohp_user.getText().toString());
+                        startActivity(i);
                         finish();
                     }
                 }

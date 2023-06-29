@@ -1,12 +1,11 @@
-package com.mykostaja.kostaja;
+package com.mykostaja.kostaja.DataKost;
 
 public class data_kost {
 
     private String nama_kost, tipe_kost, provinsi, kabupaten, kecamatan, alamat, fasilitas, status, luas,gambar;
     private String key;
 
-    public data_kost() {
-
+    public data_kost(){
     }
 
 

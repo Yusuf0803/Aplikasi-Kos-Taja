@@ -22,7 +22,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/panah_bantuan_user"
+                    android:id="@+id/panah_bantuan_admin"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center_vertical"
@@ -64,7 +64,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/WA_user"
+                    android:id="@+id/WA_admin"
                     android:layout_below="@id/text2"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
@@ -80,8 +80,8 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/pusat_bantuan_user"
-                    android:layout_below="@id/WA_user"
+                    android:id="@+id/pusat_bantuan_admin"
+                    android:layout_below="@id/WA_admin"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
