@@ -2,44 +2,71 @@ package com.mykostaja.kostaja.Recycler;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.mykostaja.kostaja.Login;
-import com.mykostaja.kostaja.Pemilik.profil_admin;
 import com.mykostaja.kostaja.Pencari.Detail_kos;
 import com.mykostaja.kostaja.R;
 import com.mykostaja.kostaja.DataKost.data_kost1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     ArrayList<data_kost1> listdatakost;
+    ArrayList<data_kost1> listdatakostsearch;
     Context context;
+
+    Filter setSearch = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<data_kost1>filterdatakost = new ArrayList<>();
+            if (charSequence == null || charSequence.length()==0){
+                filterdatakost.addAll(listdatakostsearch);
+            }else {
+                String filterPettern = charSequence.toString().toLowerCase().trim();
+                for (data_kost1 item : listdatakostsearch){
+                    if (item.getNamakost().toLowerCase().contains(filterPettern)){
+                        filterdatakost.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filterdatakost;
+            return  results;
+
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+            listdatakost.clear();
+            listdatakost.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public RecyclerViewAdapter(ArrayList<data_kost1> listdatakost, Context context) {
         this.listdatakost = listdatakost;
         this.context = context;
+        this.listdatakostsearch = listdatakost;
     }
+    public Filter getFilter(){
+        return setSearch;
+    }
+
 
     @NonNull
     @Override
