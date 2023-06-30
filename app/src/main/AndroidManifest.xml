@@ -13,6 +13,9 @@
         tools:targetApi="31">
 
         <activity
+            android:name=".Pencari.pusatbantuan"
+            android:exported="false" />
+        <activity
             android:name=".AddDataKost.Add_datakos"
             android:exported="false" />
         <activity
