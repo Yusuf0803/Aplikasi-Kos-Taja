@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddDataKost.Add_datakos"
+    android:background="@color/primary_300">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_create1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/image"></ImageView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Cphoto1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_shape"
+                    android:text="Pilih Foto"></androidx.appcompat.widget.AppCompatButton>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:text="Nama Kost"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+                <EditText
+                    android:id="@+id/Cnama_kost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:hint="Nama Kost"></EditText>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:text="Tipe Kost"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+                <Spinner
+                    android:id="@+id/Ctipe_kost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/Kosttype"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:text="Provinsi"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+                <Spinner
+                    android:id="@+id/Cprovinsi_kost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/Provinsi"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Kabupaten"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+                <Spinner
+                    android:id="@+id/Ckabupaten_kost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/Kabupaten"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Kecamatan"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+                <Spinner
+                    android:id="@+id/Ckecamatan_kost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/Kecamatan"
+                    tools:ignore="TouchTargetSizeCheck"></Spinner>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Status Kost"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+
+                <EditText
+                    android:id="@+id/Cstatus_kost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:hint="ex: kosong 1 atau penuh"
+                    android:inputType="textMultiLine"></EditText>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Luas Kamar"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+
+                <EditText
+                    android:id="@+id/Cluas_kamar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="serif"
+                    android:hint="Luas Kamar"
+                    android:inputType="textMultiLine"></EditText>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Alamat"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold"></TextView>
+
+
+                <EditText
+                    android:id="@+id/Calamatlengkapkost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="50"
+                    android:fontFamily="serif"
+                    android:hint="Alamat Lengkap"
+                    android:inputType="textMultiLine"></EditText>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Harga"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/Chargakost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="50"
+                    android:fontFamily="serif"
+                    android:hint="Harga"
+                    android:inputType="textMultiLine"></EditText>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Fasilitas"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/Cfasilitaskost1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="50"
+                    android:fontFamily="serif"
+                    android:hint="Masukkan Fasilitas Kost"
+                    android:inputType="textMultiLine"></EditText>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Nomor Handphone"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/Cnohp1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="50"
+                    android:fontFamily="serif"
+                    android:hint="Nomor Yang bisa di hubungi"
+                    android:inputType="phone"></EditText>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="end|center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Csimpan1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_shape"
+                    android:text="SIMPAN"></androidx.appcompat.widget.AppCompatButton>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</ScrollView>
