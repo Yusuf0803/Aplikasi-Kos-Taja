@@ -36,6 +36,7 @@ import com.mykostaja.kostaja.Recycler.RecyclerViewAdapter;
 import com.mykostaja.kostaja.DataKost.data_kost1;
 
 import java.util.ArrayList;
+import com.google.android.gms.ads.rewarded.RewardedAd;
 
 public class MainActivity_User extends AppCompatActivity {
 
@@ -51,6 +52,7 @@ public class MainActivity_User extends AppCompatActivity {
     String emailFromDb, userFromDb, phoneFromDb;
     EditText cari_main_user;
 
+    private final String TAG = "profil_user";
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

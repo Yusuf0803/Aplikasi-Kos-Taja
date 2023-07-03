@@ -184,12 +184,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/iv_card"
-            android:text="lihat kost ini"
+            android:text="lihat kost"
             android:textColor="@color/black"
             android:drawableRight="@drawable/panah_kanan"
-            android:drawablePadding="25dp"
-            android:textSize="15dp"
-            android:layout_marginTop="35dp"
+            android:drawablePadding="35dp"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginLeft="5dp"
             android:fontFamily="serif">
 

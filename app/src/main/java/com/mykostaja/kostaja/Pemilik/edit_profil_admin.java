@@ -15,7 +15,7 @@ public class edit_profil_admin extends AppCompatActivity {
 
     private TextView panah_edit_profil;
     private EditText nama_edit_user, email_edit_user, nohp_edit_user;
-    private Button simpan_edit_user;
+    private Button simpan_edit_user,btn_UpFto_edadmin;
     private ImageView gambar_edit_profil;
 
 
@@ -30,6 +30,7 @@ public class edit_profil_admin extends AppCompatActivity {
         email_edit_user = findViewById(R.id.ed_email_edadmin);
         nohp_edit_user = findViewById(R.id.ed_nohp_edadmin);
         simpan_edit_user = findViewById(R.id.btn_simpan_edadmin);
+        btn_UpFto_edadmin = findViewById(R.id.btn_simpan_edadmin);
 
         panah_edit_profil.setOnClickListener(new View.OnClickListener() {
             @Override

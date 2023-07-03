@@ -3,29 +3,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_margin="10dp">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Privasi Policy"
-            android:textStyle="bold"
-            android:fontFamily="serif"
-            android:textColor="@color/black"
-            android:textSize="40dp">
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal">
 
-        </TextView>
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Privasi Policy"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            </TextView>
 
-        </TextView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1"
+                android:gravity="center_horizontal">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="Kebijakan Privasi Kos Taja"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv2"
+                    android:fontFamily="serif"
+                    android:text="Halo, terima kasih telah mempercayai Kos Taja."
+                    android:textColor="@color/black"
+                    android:textSize="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv3"
+                    android:fontFamily="serif"
+                    android:text="Platform ini dimiliki dan dioperasikan oleh Kos Taja dan afiliasinya (selanjutnya disebut, “Kami”). Kami sangat menghormati privasi atas Informasi Pribadi pendatang, pengguna, ataupun pengguna terdaftar (selanjutnya disebut “Anda”) dan ingin melindungi Informasi Pribadi tersebut sesuai dengan Kebijakan Privasi (selanjutnya disebut “Kebijakan”) ini."
+                    android:textColor="@color/black"
+                    android:textSize="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv4"
+                    android:fontFamily="serif"
+                    android:text="Kebijakan ini berlaku pada setiap platform yang dioperasikan oleh Kami. Kebijakan ini menjelaskan bagaimana Kami mengumpulkan, menyimpan, menjaga, menggunakan dan (pada kondisi tertentu) mengungkapkan informasi pribadi yang teridentifikasi yang Anda berikan selama menggunakan platform Kami (selanjutnya disebut “Informasi Pribadi”) serta menjelaskan bagaimana langkah yang telah Kami ambil untuk mengamankan Informasi Pribadi Anda. Dengan mengunjungi, menggunakan dan/atau mendaftarkan diri Anda pada platform Kami, maka Anda dianggap telah membaca, mengerti, memahami dan menyetujui seluruh isi yang tertuang dalam kebijakan ini. Apabila Anda tidak setuju dengan sebagian atau seluruh isi Kebijakan ini, Anda dapat meninggalkan platform yang Kami kelola."
+                    android:textColor="@color/black"
+                    android:textSize="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv5"
+                    android:fontFamily="serif"
+                    android:text="Kontak Kami Kapanpun Anda dapat menghubungi kami di '@kostaja2023@gmail.com.'"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"></TextView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </LinearLayout>

@@ -76,7 +76,7 @@ public class edit_profil_user extends AppCompatActivity {
                 DataUser dataUser = new DataUser("", getusername, getnohp, getemail, "", "");
 
                 // Simpan dataUser ke Firebase Realtime Database
-                databaseReference.child("User").child(userId).setValue(dataUser);
+                databaseReference.child("Profile Pencari").child(userId).setValue(dataUser);
 
                 // Setelah data tersimpan, Anda dapat kembali ke activity sebelumnya
                 Intent intent = new Intent(edit_profil_user.this,edit_profil_user.class);

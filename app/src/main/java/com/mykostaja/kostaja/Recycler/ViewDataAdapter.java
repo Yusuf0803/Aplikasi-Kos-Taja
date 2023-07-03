@@ -102,6 +102,10 @@ public class ViewDataAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.Vi
                                                 notifyItemRemoved(position);
                                                 notifyItemRangeChanged(position, listdatakost.size());
                                                 Toast.makeText(context, "Data berhasil dihapus", Toast.LENGTH_SHORT).show();
+
+                                                // Pindah ke activity admin setelah penghapusan berhasil
+                                                Intent intent = new Intent(context, MainActivity_Admin.class);
+                                                context.startActivity(intent);
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
@@ -119,7 +123,8 @@ public class ViewDataAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.Vi
                             }
                         }).show();
             }
-        });    }
+        });
+    }
 
     @Override
     public int getItemCount() {

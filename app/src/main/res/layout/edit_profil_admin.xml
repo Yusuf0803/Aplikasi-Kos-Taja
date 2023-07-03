@@ -76,17 +76,19 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/tv_UpFto_edadmin"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_UpFto_edadmin"
                     android:layout_below="@+id/cardview"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="Uploa Foto"
                     android:textSize="10dp"
+                    android:layout_marginVertical="5dp"
                     android:textColor="@color/black"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:background="@drawable/border_shape">
 
-                </TextView>
+                </androidx.appcompat.widget.AppCompatButton>
 
             </RelativeLayout>
 

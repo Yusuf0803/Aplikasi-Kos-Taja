@@ -1,9 +1,12 @@
 package com.mykostaja.kostaja.Pemilik;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +31,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mykostaja.kostaja.Login;
 import com.mykostaja.kostaja.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 public class profil_admin extends AppCompatActivity {
 
@@ -33,12 +46,25 @@ public class profil_admin extends AppCompatActivity {
     private FirebaseAuth Auth;
     private FirebaseUser User;
     private String IdUser;
+    private final String TAG = "MainActivity";
 
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profil_admin);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //untuk profil admin
         gambar_profil_admin = findViewById(R.id.gambar_profil_admin);
@@ -57,10 +83,50 @@ public class profil_admin extends AppCompatActivity {
 
         getSetDataUser();
 
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i(TAG, "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d(TAG, loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
+
         akun_profil_admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(profil_admin.this,edit_profil_admin.class));
+                if (mInterstitialAd != null) {
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            // Iklan ditutup, pindah ke activity tujuan
+                            Intent intent = new Intent(profil_admin.this, edit_profil_admin.class);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(AdError adError) {
+                            // Gagal menampilkan iklan, pindah ke activity tujuan
+                            Intent intent = new Intent(profil_admin.this, edit_profil_admin.class);
+                            startActivity(intent);
+                        }
+                    });
+                    mInterstitialAd.show(profil_admin.this);
+                } else {
+                    Log.d("TAG", "The interstitial ad wasn't ready yet.");
+                    // Pindah ke activity tujuan tanpa menampilkan iklan
+//                    Intent intent = new Intent(profil_admin.this, edit_profil_admin.class);
+//                    startActivity(intent);
+                }
             }
         });
 
